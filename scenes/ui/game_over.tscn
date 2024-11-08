@@ -1,0 +1,447 @@
+[gd_scene load_steps=26 format=3 uid="uid://inor2v8tc0hs"]
+
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="1_ts5rb"]
+[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_xi2mm"]
+[ext_resource type="AudioStream" uid="uid://dtdtxerciseny" path="res://assets/audio/sfx/ui/buttonrollover.wav" id="2_7ga7t"]
+[ext_resource type="AudioStream" uid="uid://ym5t3fjetgq8" path="res://assets/audio/sfx/ui/buttonclickrelease.wav" id="3_k5am2"]
+[ext_resource type="AudioStream" uid="uid://dxxn0a5xvgkyr" path="res://assets/audio/music/edit.wav" id="4_8olkv"]
+[ext_resource type="PackedScene" uid="uid://b3a4573kbhxh7" path="res://scenes/ui/buy_item.tscn" id="5_l70se"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tb12c"]
+bg_color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xap13"]
+bg_color = Color(0.262932, 0.262932, 0.262932, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc5sx"]
+bg_color = Color(0.473976, 0.473976, 0.473976, 1)
+
+[sub_resource type="GDScript" id="GDScript_qrxj4"]
+script/source = "extends Label
+
+@export var fade_out_speed: float
+
+
+func _ready() -> void:
+  reset()
+
+
+func _process(delta: float) -> void:
+  if modulate.a > 0.0:
+    modulate.a -= fade_out_speed * delta
+
+
+func reset() -> void:
+  $AnimationPlayer.play(\"RESET\")
+  $AnimationPlayer.play(\"float_away\")
+  modulate.a = 1.0
+  if $Timer.is_stopped():
+    $Timer.start()
+  set_process(false)
+
+
+func _on_timer_timeout() -> void:
+  set_process(true)
+  $Timer.stop()
+"
+
+[sub_resource type="Animation" id="Animation_lpyu8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 480)]
+}
+
+[sub_resource type="Animation" id="Animation_er27p"]
+resource_name = "float_away"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(0, 480), Vector2(30, 450)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_22hqb"]
+_data = {
+"RESET": SubResource("Animation_lpyu8"),
+"float_away": SubResource("Animation_er27p")
+}
+
+[sub_resource type="Animation" id="Animation_4qnw6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(542, 548)]
+}
+
+[sub_resource type="Animation" id="Animation_j72ln"]
+resource_name = "float"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0, 548), Vector2(0, 545)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbulx"]
+_data = {
+"RESET": SubResource("Animation_4qnw6"),
+"float": SubResource("Animation_j72ln")
+}
+
+[sub_resource type="GDScript" id="GDScript_i3cin"]
+script/source = "extends Node
+
+signal price_changed
+
+
+func proceed(main: Node) -> void:
+  var hud := main.get_node(\"HUD\")
+  hud.max_time += 5.0
+  hud.time = hud.max_time
+  hud.render_time()
+  get_parent().price_money.mul(1.5)
+  price_changed.emit()
+"
+
+[sub_resource type="GDScript" id="GDScript_bmhsc"]
+resource_name = "BuyCat"
+script/source = "extends Node
+
+signal price_changed
+
+
+func proceed(main: Node) -> void:
+  main.cats_owned += 1
+  main.generate_cat()
+  get_parent().price_money.mul(2)
+  price_changed.emit()
+"
+
+[sub_resource type="GDScript" id="GDScript_evre8"]
+resource_name = "BuyGreenCat"
+script/source = "extends Node
+
+signal price_changed
+
+
+func proceed(main: Node) -> void:
+  main.green_cats_owned += 1
+  main.generate_cat()
+  get_parent().price_money.mul(3)
+  price_changed.emit()
+"
+
+[sub_resource type="GDScript" id="GDScript_tcfkp"]
+resource_name = "BuyPinkCat"
+script/source = "extends Node
+
+signal price_changed
+
+
+func proceed(main: Node) -> void:
+  main.pink_cats_owned += 1
+  main.generate_cat()
+  get_parent().price_money.mul(4)
+  price_changed.emit()
+"
+
+[sub_resource type="GDScript" id="GDScript_d5joj"]
+resource_name = "BuyBlueCat"
+script/source = "extends Node
+
+signal price_changed
+
+
+func proceed(main: Node) -> void:
+  main.blue_cats_owned += 1
+  main.generate_cat()
+  get_parent().price_money.mul(5)
+  price_changed.emit()
+"
+
+[sub_resource type="Animation" id="Animation_8k3tj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hqh0u"]
+resource_name = "ost_fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_22qt6"]
+resource_name = "ost_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1u2ra"]
+_data = {
+"RESET": SubResource("Animation_8k3tj"),
+"ost_fade_in": SubResource("Animation_hqh0u"),
+"ost_fade_out": SubResource("Animation_22qt6")
+}
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_xi2mm")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 60)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -98.0
+offset_right = 125.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ts5rb")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_tb12c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xap13")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mc5sx")
+text = "RESTART"
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="Button"]
+stream = ExtResource("2_7ga7t")
+bus = &"UI"
+
+[node name="PressSound" type="AudioStreamPlayer" parent="Button"]
+process_mode = 3
+stream = ExtResource("3_k5am2")
+bus = &"UI"
+
+[node name="Earned" type="Label" parent="."]
+modulate = Color(0, 1, 0, 1)
+custom_minimum_size = Vector2(1080, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -168.0
+offset_right = 504.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ts5rb")
+theme_override_font_sizes/font_size = 44
+text = "+100$"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = SubResource("GDScript_qrxj4")
+fade_out_speed = 0.5
+
+[node name="Timer" type="Timer" parent="Earned"]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Earned"]
+libraries = {
+"": SubResource("AnimationLibrary_22hqb")
+}
+
+[node name="Money" type="Label" parent="."]
+custom_minimum_size = Vector2(1100, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -100.0
+offset_right = 1066.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.870588, 0.847059, 0.380392, 1)
+theme_override_fonts/font = ExtResource("1_ts5rb")
+theme_override_font_sizes/font_size = 66
+text = "$0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Money"]
+libraries = {
+"": SubResource("AnimationLibrary_xbulx")
+}
+autoplay = "float"
+
+[node name="Shop" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(450, 450)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -244.0
+offset_right = 250.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="Shop"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/PanelContainer"]
+custom_minimum_size = Vector2(475, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Shop/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.835294, 0.462745, 1)
+theme_override_fonts/font = ExtResource("1_ts5rb")
+theme_override_font_sizes/font_size = 44
+text = "UPGRADES"
+horizontal_alignment = 1
+
+[node name="BuyTime" parent="Shop/PanelContainer/VBoxContainer" instance=ExtResource("5_l70se")]
+layout_mode = 2
+item_name = "+5 seconds"
+price_string = "250"
+
+[node name="PostTransaction" type="Node" parent="Shop/PanelContainer/VBoxContainer/BuyTime"]
+script = SubResource("GDScript_i3cin")
+
+[node name="BuyCat" parent="Shop/PanelContainer/VBoxContainer" instance=ExtResource("5_l70se")]
+layout_mode = 2
+item_name = "common cat (x2 $)"
+price_string = "2.5K"
+rarenesss_color = Color(0.992157, 0.996078, 0.996078, 1)
+
+[node name="PostTransaction" type="Node" parent="Shop/PanelContainer/VBoxContainer/BuyCat"]
+script = SubResource("GDScript_bmhsc")
+
+[node name="BuyGreenCat" parent="Shop/PanelContainer/VBoxContainer" instance=ExtResource("5_l70se")]
+layout_mode = 2
+item_name = "uncommon cat (x4 $$)"
+price_string = "10K"
+rarenesss_color = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="PostTransaction" type="Node" parent="Shop/PanelContainer/VBoxContainer/BuyGreenCat"]
+script = SubResource("GDScript_evre8")
+
+[node name="BuyPinkCat" parent="Shop/PanelContainer/VBoxContainer" instance=ExtResource("5_l70se")]
+layout_mode = 2
+item_name = "rare cat (x8 $$$)"
+price_string = "100K"
+rarenesss_color = Color(0.141176, 0.443137, 0.639216, 1)
+
+[node name="PostTransaction" type="Node" parent="Shop/PanelContainer/VBoxContainer/BuyPinkCat"]
+script = SubResource("GDScript_tcfkp")
+
+[node name="BuyBlueCat" parent="Shop/PanelContainer/VBoxContainer" instance=ExtResource("5_l70se")]
+layout_mode = 2
+item_name = "epic cat (x16 $$$$)"
+price_string = "1M"
+rarenesss_color = Color(0.490196, 0.235294, 0.596078, 1)
+
+[node name="PostTransaction" type="Node" parent="Shop/PanelContainer/VBoxContainer/BuyBlueCat"]
+script = SubResource("GDScript_d5joj")
+
+[node name="ShopMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_8olkv")
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopMusic"]
+libraries = {
+"": SubResource("AnimationLibrary_1u2ra")
+}
+
+[connection signal="mouse_entered" from="Button" to="Button/HoverSound" method="play"]
+[connection signal="pressed" from="Button" to="Button/PressSound" method="play"]
+[connection signal="timeout" from="Earned/Timer" to="Earned" method="_on_timer_timeout"]
