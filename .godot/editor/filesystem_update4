@@ -1,1 +1,4 @@
+res://scenes/main.tscn
+res://scripts/ui/hud.gd
 res://scenes/ui/main_menu.tscn
+res://scripts/player.gd
