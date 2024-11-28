@@ -43,7 +43,7 @@ var earned: int
 
 # Player moving speed
 var speed: float
-const START_SPEED := 5.0
+const START_SPEED := 6.0
 const MAX_SPEED := 25.0
 const PROSTO_SPEED := 100
 const SPEED_MODIFIER := 5000

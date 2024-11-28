@@ -2,7 +2,7 @@ class_name Coin
 
 extends Item
 
-const frases = ["Wow!", "Increible!", "Solido!"]
+const frases = ["Wow!", "Increible!", "Solido!","Asombroso!","Buen trabajo!"]
 
 func interact() -> void:
     $PickupSound.play()
