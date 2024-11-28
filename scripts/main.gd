@@ -43,7 +43,7 @@ var earned: int
 
 # Player moving speed
 var speed: float
-const START_SPEED := 10.0
+const START_SPEED := 5.0
 const MAX_SPEED := 25.0
 const PROSTO_SPEED := 100
 const SPEED_MODIFIER := 5000
@@ -143,7 +143,7 @@ func new_game() -> void:
 
 
 func show_score() -> void:
-  $HUD/ScoreLabel.text = "SCORE: " + str(score / SCORE_MODIFIER)
+  $HUD/ScoreLabel.text = "PUNTOS: " + str(earned)
   check_high_score()
 
 

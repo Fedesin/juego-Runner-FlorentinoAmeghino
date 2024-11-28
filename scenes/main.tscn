@@ -41,6 +41,9 @@ position = Vector2(576, 324)
 
 [node name="HUD" parent="." instance=ExtResource("5_mo7pu")]
 
+[node name="TimeLabel" parent="HUD" index="3"]
+visible = false
+
 [node name="GameOver" parent="." node_paths=PackedStringArray("main") instance=ExtResource("10_4c20w")]
 main = NodePath("..")
 
@@ -54,3 +57,8 @@ visible = false
 [connection signal="reset_game" from="." to="GameOver" method="_on_reset_game"]
 [connection signal="start_game" from="." to="HUD" method="_on_start_game"]
 [connection signal="time_expired" from="HUD" to="." method="end_game"]
+
+[editable path="Background"]
+[editable path="Ground"]
+[editable path="Player"]
+[editable path="HUD"]

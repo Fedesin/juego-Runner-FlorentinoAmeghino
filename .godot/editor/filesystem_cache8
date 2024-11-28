@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731077674
+::res://::1732807680
 default_bus_layout.tres::AudioBusLayout::7682341825388365946::1731077658::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1731077658::0::1::::<><>::
 icon.png::CompressedTexture2D::2982076673210372105::1731077658::1731077658::1::::<><>::
@@ -61,7 +61,7 @@ cat-run.png::CompressedTexture2D::5744732973073082959::1731077658::1731077658::1
 ::res://assets/sprites/cats/light/::1731077658
 cat-idle.png::CompressedTexture2D::4967654187049218518::1731077658::1731077658::1::::<><>::
 cat-run.png::CompressedTexture2D::4679411464051129292::1731077658::1731077658::1::::<><>::
-::res://assets/sprites/cats/orange/::1731079552
+::res://assets/sprites/cats/orange/::1731079553
 cat-idle2.png::CompressedTexture2D::4589535381539783645::1731077658::1731079553::1::::<><>::
 cat-idle.png::CompressedTexture2D::8684118565050770950::1731079528::1731079553::1::::<><>::
 cat-jump.png::CompressedTexture2D::8178627739587915718::1731077658::1731077658::1::::<><>::
@@ -78,10 +78,10 @@ chair.png::CompressedTexture2D::4617977527422899360::1731077658::1731077658::1::
 fridge.png::CompressedTexture2D::703506649648821390::1731077658::1731077658::1::::<><>::
 ::res://assets/sprites/powerups/::1731077658
 coin.png::CompressedTexture2D::3227871912868752014::1731077658::1731077658::1::::<><>::
-::res://scenes/::1731077775
+::res://scenes/::1731079566
 background.tscn::PackedScene::5114911399106061411::1731077658::0::1::::<><>::uid://wi118gb1rfr3::::res://assets/sprites/background/background.png<>uid://ds78cdufiimwh::::res://assets/sprites/background/layer2.png<>uid://bfcu4ab1ctwqu::::res://assets/sprites/background/layer1.png<>uid://cfsu5f1h46fs4::::res://assets/sprites/background/layer3.png<>uid://b1g0dcjpnsjc::::res://assets/sprites/background/layer4.png
 ground.tscn::PackedScene::6970592036023299273::1731077658::0::1::::<><>::uid://uul7hdwqbyi7::::res://assets/sprites/ground.png
-main.tscn::PackedScene::6873583101239118438::1731077775::0::1::::<><>::uid://ce4x3xa1n7wsx::::res://scenes/background.tscn<>uid://c6kuvrcrxl2sr::::res://scenes/ground.tscn<>res://scripts/main.gd<>uid://bc156o5in1r1k::::res://scenes/cats/black_cat.tscn<>uid://dfcsh5b7ftcru::::res://scenes/player.tscn<>uid://b7im23tik1ri2::::res://scenes/cats/gray_cat.tscn<>uid://c260n62082sfx::::res://scenes/cats/light_cat.tscn<>uid://b3lm148hvrifi::::res://scenes/cats/green_cat.tscn<>uid://bu4jalvua6jk::::res://scenes/cats/orange_cat.tscn<>uid://b2ygwns5dr211::::res://scenes/ui/hud.tscn<>uid://dnbk8hwdwvkd7::::res://scenes/cats/white_cat.tscn<>uid://dtasl0kw0cfjo::::res://scenes/cats/blue_cat.tscn<>uid://c0waeo1kbmicg::::res://scenes/ui/running_music.tscn<>uid://dwccscvhgbkaj::::res://scenes/cats/pink_cat.tscn<>uid://bqugp4dysqfuk::::res://scenes/objects/bookshelf.tscn<>uid://inor2v8tc0hs::::res://scenes/ui/game_over.tscn<>uid://so22h6q30vhj::::res://scenes/objects/chair.tscn<>uid://cmoxx3oim36xs::::res://scenes/objects/coin.tscn<>uid://w3a6bldv8nuf::::res://scenes/objects/fridge.tscn<>uid://xmcamt5xtmet::::res://scenes/ui/menu.tscn
+main.tscn::PackedScene::6873583101239118438::1731079566::0::1::::<><>::uid://ce4x3xa1n7wsx::::res://scenes/background.tscn<>uid://c6kuvrcrxl2sr::::res://scenes/ground.tscn<>res://scripts/main.gd<>uid://bc156o5in1r1k::::res://scenes/cats/black_cat.tscn<>uid://dfcsh5b7ftcru::::res://scenes/player.tscn<>uid://b7im23tik1ri2::::res://scenes/cats/gray_cat.tscn<>uid://c260n62082sfx::::res://scenes/cats/light_cat.tscn<>uid://b3lm148hvrifi::::res://scenes/cats/green_cat.tscn<>uid://bu4jalvua6jk::::res://scenes/cats/orange_cat.tscn<>uid://b2ygwns5dr211::::res://scenes/ui/hud.tscn<>uid://dnbk8hwdwvkd7::::res://scenes/cats/white_cat.tscn<>uid://dtasl0kw0cfjo::::res://scenes/cats/blue_cat.tscn<>uid://c0waeo1kbmicg::::res://scenes/ui/running_music.tscn<>uid://dwccscvhgbkaj::::res://scenes/cats/pink_cat.tscn<>uid://bqugp4dysqfuk::::res://scenes/objects/bookshelf.tscn<>uid://inor2v8tc0hs::::res://scenes/ui/game_over.tscn<>uid://so22h6q30vhj::::res://scenes/objects/chair.tscn<>uid://cmoxx3oim36xs::::res://scenes/objects/coin.tscn<>uid://w3a6bldv8nuf::::res://scenes/objects/fridge.tscn<>uid://xmcamt5xtmet::::res://scenes/ui/menu.tscn
 player.tscn::PackedScene::7515442009911388934::1731077658::0::1::::<><>::res://scripts/player.gd<>uid://dvywftt5fhi4e::::res://assets/sprites/cats/orange/cat-idle.png<>uid://dor12lm10n7xa::::res://assets/sprites/cats/orange/cat-jump.png<>uid://ba5qxxx3jqde::::res://assets/sprites/cats/orange/cat-run.png<>uid://dscpg6m666dta::::res://assets/audio/sfx/player/jump.wav<>uid://buhfcj07y8kd4::::res://assets/audio/sfx/player/hit.wav
 ::res://scenes/cats/::1731077658
 black_cat.tscn::PackedScene::2582349844021698402::1731077658::0::1::::<><>::res://scripts/cat.gd<>uid://cik211m0nhqw8::::res://assets/sprites/cats/black/cat-idle.png<>uid://d0nsb2oaf2u76::::res://assets/sprites/cats/black/cat-run.png<>uid://d2410xg1k008c::::res://assets/audio/sfx/cats/meow1.mp3<>uid://dkhfnceraa8pb::::res://assets/audio/sfx/cats/meow2.mp3<>uid://bta0xsj2av7ef::::res://assets/audio/sfx/cats/meow3.mp3<>uid://b046peum241gb::::res://assets/audio/sfx/cats/meow4.mp3
@@ -105,11 +105,11 @@ main_menu.tscn::PackedScene::1609334217833108991::1731077775::0::1::::<><>::uid:
 menu.tscn::PackedScene::1639238031735039955::1731077658::0::1::::<><>::uid://wi118gb1rfr3::::res://assets/sprites/background/background.png<>uid://s15272omc2m3::::res://assets/fonts/retro.ttf<>uid://dtdtxerciseny::::res://assets/audio/sfx/ui/buttonrollover.wav<>uid://ym5t3fjetgq8::::res://assets/audio/sfx/ui/buttonclickrelease.wav
 random_fire.tscn::PackedScene::1715226718715008246::1731077658::0::1::::<><>::uid://d332ipwc0mjh5::::res://assets/audio/sfx/fire/burning-wood-2.wav<>uid://cunbfle74syrn::::res://assets/audio/sfx/fire/fireburn.wav<>uid://b7tyxrgr7wqyv::::res://assets/audio/sfx/fire/newspaper-burning.wav<>uid://bjspeju061upm::::res://assets/audio/sfx/fire/fireplace-burning.wav
 running_music.tscn::PackedScene::6572986688049934746::1731077658::0::1::::<><>::uid://cvsniboc7lj3h::::res://assets/audio/music/run.wav
-::res://scripts/::1731077658
+::res://scripts/::1732807328
 cat.gd::GDScript::-1::1731077658::0::1::::Cat<>Node2D<>::
 main.gd::GDScript::-1::1731077658::0::1::::<>Node<>::
 money.gd::GDScript::-1::1731077658::0::1::::Money<>RefCounted<>::
-player.gd::GDScript::-1::1731077658::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1732807328::0::1::::<>CharacterBody2D<>::
 ::res://scripts/items/::1731077658
 coin.gd::GDScript::-1::1731077658::0::1::::Coin<>Item<>::
 item.gd::GDScript::-1::1731077658::0::1::::Item<>Area2D<>::
