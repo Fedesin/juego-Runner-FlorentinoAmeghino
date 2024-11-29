@@ -1,6 +1,4 @@
 res://scenes/ui/main_menu.tscn
 res://scripts/player.gd
-res://scripts/items/coin.gd
 res://scenes/main.tscn
 res://scenes/objects/coin.tscn
-res://scripts/main.gd
