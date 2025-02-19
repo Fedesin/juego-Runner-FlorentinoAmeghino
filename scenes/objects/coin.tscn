@@ -1,50 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmoxx3oim36xs"]
+[gd_scene load_steps=12 format=3 uid="uid://cmoxx3oim36xs"]
 
 [ext_resource type="Script" path="res://scripts/items/coin.gd" id="1_xhfd4"]
-[ext_resource type="Texture2D" uid="uid://bl8utxdotvswc" path="res://assets/sprites/powerups/coin.png" id="2_4pv46"]
+[ext_resource type="Texture2D" uid="uid://t2pv1f6x8apu" path="res://assets/sprites/powerups/coin1.png" id="3_5trpf"]
 [ext_resource type="AudioStream" uid="uid://cvmmnn6jal01n" path="res://assets/audio/sfx/items/pickup-coin.wav" id="3_7f616"]
+[ext_resource type="Script" path="res://scenes/objects/AnimatedSprite2D.gd" id="3_rlnml"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="4_keig4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gvyjs"]
-atlas = ExtResource("2_4pv46")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_20jnv"]
-atlas = ExtResource("2_4pv46")
-region = Rect2(8, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8v72t"]
-atlas = ExtResource("2_4pv46")
-region = Rect2(16, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gscc5"]
-atlas = ExtResource("2_4pv46")
-region = Rect2(24, 0, 8, 8)
+[ext_resource type="Script" path="res://scenes/objects/Sprite2D.gd" id="4_le55l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k6yha"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gvyjs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_20jnv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8v72t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gscc5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8v72t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_20jnv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gvyjs")
-}],
+"frames": [],
 "loop": true,
 "name": &"flip",
 "speed": 5.0
@@ -93,20 +58,22 @@ _data = {
 script = ExtResource("1_xhfd4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(6, 6)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_k6yha")
 animation = &"flip"
 autoplay = "flip"
+script = ExtResource("3_rlnml")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(6, 6)
-texture = ExtResource("2_4pv46")
+scale = Vector2(4, 4)
+texture = ExtResource("3_5trpf")
 region_enabled = true
-region_rect = Rect2(0, 0, 8, 8)
+region_rect = Rect2(0, 0, 18, 18)
+script = ExtResource("4_le55l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(6, 6)
+scale = Vector2(0.765, 0.765)
 shape = SubResource("RectangleShape2D_tiug0")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]

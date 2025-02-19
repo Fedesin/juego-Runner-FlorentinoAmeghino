@@ -2,3 +2,8 @@ res://scenes/ui/main_menu.tscn
 res://scripts/player.gd
 res://scenes/main.tscn
 res://scenes/objects/coin.tscn
+res://scripts/items/coin.gd
+res://scenes/objects/AnimatedSprite2D.gd
+res://scripts/main.gd
+res://levels.gd
+res://level.gd

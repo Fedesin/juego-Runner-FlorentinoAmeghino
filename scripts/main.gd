@@ -43,10 +43,10 @@ var earned: int
 
 # Player moving speed
 var speed: float
-const START_SPEED := 6.0
+const START_SPEED := 7.0
 const MAX_SPEED := 25.0
 const PROSTO_SPEED := 100
-const SPEED_MODIFIER := 5000
+const SPEED_MODIFIER := 10000
 
 var screen_size: Vector2i
 var game_running: bool
@@ -56,6 +56,8 @@ const MAX_DIFFICULTY := 2
 
 var ground_height: int
 var ground_scale: int
+
+var levels = Levels.new()
 
 signal reset_game
 signal start_game
@@ -164,6 +166,9 @@ func generate_item() -> void:
   var max_items := difficulty + 1
   for i in randi() % max_items + 1:
     item = item_type.instantiate()
+    
+    if item is Coin:
+        item.set_animal(levels.get_level().get_animal())
 
     # Get item's sprite pixel lengths
     var item_height: int = item.get_node("Sprite2D").texture.get_height()

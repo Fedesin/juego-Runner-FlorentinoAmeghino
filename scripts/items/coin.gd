@@ -1,8 +1,10 @@
-class_name Coin
-
 extends Item
 
+class_name Coin
+
 const frases = ["Wow!", "Increible!", "Solido!","Asombroso!","Buen trabajo!"]
+
+var animal = ""
 
 func interact() -> void:
     $PickupSound.play()
@@ -17,3 +19,9 @@ func interact() -> void:
     var index = randi_range(0,(frases.size() - 1))
     $AmountEarned.text = frases[index]
     $AmountEarned.show()
+    
+func set_animal(nombre) -> void:
+    animal = nombre
+    
+func get_animal() -> String:
+    return animal
