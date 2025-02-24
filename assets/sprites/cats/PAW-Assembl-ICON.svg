@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
+  <path d="M 250.001 45.096 L 430.56 149.342 L 430.56 357.834 L 250.001 462.08 L 69.442 357.834 L 69.442 149.342 Z" bx:shape="n-gon 250.001 253.588 208.492 208.492 6 0 1@3f27cb46" style="fill: rgb(188, 98, 98); fill-opacity: 0; stroke-width: 18px; stroke: rgb(77, 77, 77);"/>
+  <path d="M 249.867 44.868 L 430.323 149.26 L 249.867 253.652 L 69.411 149.26 Z" bx:shape="n-gon 249.867 149.26 180.456 104.392 4 0 1@24fe2571" style="stroke: rgb(0, 0, 0); fill: rgb(225, 100, 40); stroke-width: 0px; fill-rule: nonzero;"/>
+  <path d="M 308.169 24.913 L 488.796 129.352 L 308.169 233.791 L 127.542 129.352 Z" bx:shape="n-gon 308.169 129.352 180.627 104.439 4 0 1@7721150e" style="stroke: rgb(0, 0, 0); fill: rgb(39, 33, 33); stroke-width: 0px; transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(-0.5, 0.866025, -0.866025, -0.5, 32.085008, 176.268464)"/>
+  <path d="M 69.258 357.876 L 69.432 149.3 L 132.376 185.571 C 141.101 171.922 159.165 167.633 173.126 176.041 L 188.471 185.284 C 201.997 193.429 206.788 210.554 199.812 224.43 L 250.152 253.437 L 249.977 462.013 L 69.258 357.876 Z" style="stroke: rgb(0, 0, 0); fill: rgb(236, 236, 236); stroke-width: 0px;"/>
+  <rect x="93.232" y="151.27" width="77.914" height="112.032" rx="30" ry="30" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(225, 100, 40); transform-origin: 132.189px 207.286px;" transform="matrix(-0.871423, 0.490533, -0.490537, -0.87142, 193.338451, -20.737037)"/>
+  <rect x="93.232" y="151.271" width="77.914" height="112.033" rx="30" ry="30" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(39, 33, 33); transform-origin: 132.188px 207.287px;" transform="matrix(0, 1, -1, -0.000001, 140.097468, 149.486889)"/>
+</svg>

@@ -145,7 +145,7 @@ func new_game() -> void:
 
 
 func show_score() -> void:
-  $HUD/ScoreLabel.text = "PUNTOS: " + str(earned)
+  $HUD/ScoreLabel.text = "Huesos: " + str(earned)
   check_high_score()
 
 

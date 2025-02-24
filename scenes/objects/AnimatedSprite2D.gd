@@ -13,10 +13,13 @@ func _ready():
     # Obtener el nodo padre (Area2D)
     var coin_area = get_parent()
     var animal = coin_area.get_animal()
+    print("hola :)")
+    print(animal.pathBonesImages)
+    print("chau :)")
     # Crear las rutas de las texturas de manera dinámica
-    var path1 = "res://assets/sprites/powerups/" + animal + "/craneo.png"
-    var path2 = "res://assets/sprites/powerups/" + animal + "/hueso.png"
-    var path3 = "res://assets/sprites/powerups/" + animal + "/torso.png"
+    var path1 = animal.pathBonesImages + "/craneo.png"
+    var path2 = animal.pathBonesImages + "/hueso.png"
+    var path3 = animal.pathBonesImages + "/torso.png"
     # load las texturas
     TEXTURE_VARIATIONS_ARRAY = [
         load(path1),

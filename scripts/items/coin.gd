@@ -4,7 +4,9 @@ class_name Coin
 
 const frases = ["Wow!", "Increible!", "Solido!","Asombroso!","Buen trabajo!"]
 
-var animal = ""
+const Animal = preload("res://animal.gd")
+
+var animal: Animal
 
 func interact() -> void:
     $PickupSound.play()
@@ -20,8 +22,8 @@ func interact() -> void:
     $AmountEarned.text = frases[index]
     $AmountEarned.show()
     
-func set_animal(nombre) -> void:
-    animal = nombre
+func set_animal(_animal: Animal):
+    animal = _animal
     
-func get_animal() -> String:
+func get_animal() -> Animal:
     return animal

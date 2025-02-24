@@ -4,14 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://niposccj7bte" path="res://assets/sprites/obstacles/bookshelf.png" id="2_2snwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmqbr"]
-size = Vector2(96, 144)
+size = Vector2(64, 121)
 
 [node name="Bookshelf" type="Area2D"]
 script = ExtResource("1_737ji")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(6, 6)
+position = Vector2(1.0842e-19, 13)
+scale = Vector2(3, 3)
 texture = ExtResource("2_2snwm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_lmqbr")

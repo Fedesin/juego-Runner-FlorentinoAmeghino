@@ -1,32 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://w3a6bldv8nuf"]
+[gd_scene load_steps=8 format=3 uid="uid://w3a6bldv8nuf"]
 
 [ext_resource type="Script" path="res://scripts/items/obstacle.gd" id="1_f8dmj"]
 [ext_resource type="Texture2D" uid="uid://ka1wfn3ooco1" path="res://assets/sprites/obstacles/fridge.png" id="1_i3ty4"]
 [ext_resource type="PackedScene" uid="uid://yo4sexddq263" path="res://scenes/ui/random_fire.tscn" id="2_8otl6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dfct"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tacl"]
 atlas = ExtResource("1_i3ty4")
-region = Rect2(0, 0, 16, 24)
+region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uq4fw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ui"]
 atlas = ExtResource("1_i3ty4")
-region = Rect2(16, 0, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3lnkx"]
-atlas = ExtResource("1_i3ty4")
-region = Rect2(32, 0, 16, 24)
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ts0r4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2dfct")
+"texture": SubResource("AtlasTexture_7tacl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uq4fw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3lnkx")
+"texture": SubResource("AtlasTexture_fs7ui")
 }],
 "loop": true,
 "name": &"burn",
@@ -34,13 +27,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vojj"]
-size = Vector2(84, 138)
+size = Vector2(84, 96)
 
 [node name="Fridge" type="Area2D"]
 script = ExtResource("1_f8dmj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(6, 6)
+position = Vector2(0, 83)
+scale = Vector2(2.86979, 2.86979)
 sprite_frames = SubResource("SpriteFrames_ts0r4")
 animation = &"burn"
 autoplay = "burn"
@@ -53,7 +47,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(-2, 89)
 shape = SubResource("RectangleShape2D_7vojj")
 
 [node name="RandomFire" parent="." instance=ExtResource("2_8otl6")]
