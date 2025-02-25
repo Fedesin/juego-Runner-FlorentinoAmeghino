@@ -13,9 +13,7 @@ func _ready():
     # Obtener el nodo padre (Area2D)
     var coin_area = get_parent()
     var animal = coin_area.get_animal()
-    print("hola :)")
     print(animal.pathBonesImages)
-    print("chau :)")
     # Crear las rutas de las texturas de manera dinámica
     var path1 = animal.pathBonesImages + "/craneo.png"
     var path2 = animal.pathBonesImages + "/hueso.png"

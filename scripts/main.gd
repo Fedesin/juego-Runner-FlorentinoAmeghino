@@ -71,6 +71,11 @@ func _ready() -> void:
   $GameOver/Button.pressed.connect(new_game)
   new_game()
 
+func getCurrentLevel() -> Level:
+    return levels.get_level()
+    
+func passLevel():
+    levels.next()
 
 func _process(delta: float) -> void:
   # Show in-game menu when <ESC> is pressed

@@ -14,9 +14,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     time -= delta
     render_time()
+    
+    var main = get_parent()
+    var maxScore = main.getCurrentLevel().getMaxScore()
+    if main.earned >= maxScore:
+        reset()
+        main.passLevel()
+        time_expired.emit()
+    
+    """
     if time <= 0.0:
         reset()
         time_expired.emit()
+    """
 
 
 func render_time() -> void:
