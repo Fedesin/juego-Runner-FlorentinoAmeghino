@@ -1,8 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://w3a6bldv8nuf"]
+[gd_scene load_steps=10 format=3 uid="uid://w3a6bldv8nuf"]
 
 [ext_resource type="Script" path="res://scripts/items/obstacle.gd" id="1_f8dmj"]
 [ext_resource type="Texture2D" uid="uid://ka1wfn3ooco1" path="res://assets/sprites/obstacles/fridge.png" id="1_i3ty4"]
 [ext_resource type="PackedScene" uid="uid://yo4sexddq263" path="res://scenes/ui/random_fire.tscn" id="2_8otl6"]
+[ext_resource type="Shader" path="res://scenes/objects/miShader.gdshader" id="2_pjia6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4tmi"]
+shader = ExtResource("2_pjia6")
+shader_parameter/BLOOM_THRESHOLD = 0.7
+shader_parameter/BLOOM_INTENSITY = 3.0
+shader_parameter/BLUR_ITERATIONS = 3
+shader_parameter/BLUR_SIZE = 0.03
+shader_parameter/BLUR_SUBDIVISIONS = 32
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tacl"]
 atlas = ExtResource("1_i3ty4")
@@ -31,6 +40,14 @@ size = Vector2(84, 96)
 
 [node name="Fridge" type="Area2D"]
 script = ExtResource("1_f8dmj")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_k4tmi")
+position = Vector2(0, 83)
+scale = Vector2(2.87, 2.87)
+sprite_frames = SubResource("SpriteFrames_ts0r4")
+animation = &"burn"
+autoplay = "burn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 83)

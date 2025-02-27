@@ -89,6 +89,8 @@ func _process(delta: float) -> void:
     if Input.is_action_pressed("jump"):
       game_running = true
       $HUD/StartLabel.hide()
+      var tween = get_tree().create_tween()
+      tween.tween_property($HUD/TitleLabel, "modulate:a", 0, 2.5)
       start_game.emit()
     else:
       return
@@ -146,6 +148,10 @@ func new_game() -> void:
   $GameOver.hide()
   $RunningMusic.play()
   $RunningMusic/AnimationPlayer.play("ost_fade_in")
+  var tween = get_tree().create_tween()
+  tween.tween_property($HUD/TitleLabel, "modulate:a", 1, 0)
+  $HUD/TitleLabel.text = levels.get_level().get_title()
+  change_background()
   reset_game.emit()
 
 
@@ -153,6 +159,15 @@ func show_score() -> void:
   $HUD/ScoreLabel.text = "Huesos: " + str(earned)
   check_high_score()
 
+func change_background():
+  var pathBackground = "res://assets/sprites/backgrounds/" + levels.get_level().get_scene() + "/background.png"
+  var pathGround = "res://assets/sprites/backgrounds/" + levels.get_level().get_scene() + "/ground.png"
+  var pathLayer1 = "res://assets/sprites/backgrounds/" + levels.get_level().get_scene() + "/layer1.png"
+  var pathLayer3 = "res://assets/sprites/backgrounds/" + levels.get_level().get_scene() + "/layer3.png"
+  $Background/Sprite2D.texture = load(pathBackground)
+  $Ground/Sprite2D.texture = load(pathGround)
+  $Background/ParallaxLayer/Sprite2D.texture = load(pathLayer1)
+  $Background/ParallaxLayer2/Sprite2D.texture = load(pathLayer3)
 
 func check_high_score() -> void:
   if score > high_score:

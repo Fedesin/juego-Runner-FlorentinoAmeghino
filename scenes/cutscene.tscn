@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://csgcparkr63bj"]
+
+[ext_resource type="Texture2D" uid="uid://b34v0aq4qgmcq" path="res://assets/sprites/animal-pics/2.2 esqueleto ave del etrror-  fosil.jpeg" id="1_3tk4q"]
+[ext_resource type="Texture2D" uid="uid://mrmvmkav2m77" path="res://assets/sprites/backgrounds/cutscene/background.png" id="2_3ie6p"]
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="3_bmqhf"]
+[ext_resource type="Texture2D" uid="uid://062j862cp46b" path="res://assets/sprites/animal-pics/florencioFace2.png" id="4_p6f7c"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(571, 274)
+scale = Vector2(1.91964, 1.91964)
+texture = ExtResource("1_3tk4q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("2_3ie6p")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 48.0
+offset_right = 847.0
+offset_bottom = 93.0
+rotation = -0.0174533
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_bmqhf")
+theme_override_font_sizes/font_size = 35
+text = "Nombre animal"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(119.781, 507.696)
+scale = Vector2(2.24437, 2.24437)
+texture = ExtResource("4_p6f7c")

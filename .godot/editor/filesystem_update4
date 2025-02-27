@@ -1,10 +1,8 @@
 res://scenes/main.tscn
 res://scripts/player.gd
-res://scenes/objects/AnimatedSprite2D.gd
-res://scenes/objects/coin.tscn
-res://scripts/ui/hud.gd
-res://scenes/ui/game_over.tscn
-res://level.gd
-res://levels.gd
-res://scripts/main.gd
-res://scenes/ui/hud.tscn
+res://scenes/objects/miShader.gdshader
+res://scenes/objects/blur.gdshader
+res://scenes/objects/chair.tscn
+res://scenes/objects/bookshelf.tscn
+res://scenes/objects/fridge.tscn
+res://scenes/cutscene.tscn
