@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv1vxcpk48sri"
-path="res://.godot/imported/3-Gliptodonte imagen fosil.jpeg-8efc1a732bdfce85ea522aaf72aef4a0.ctex"
+uid="uid://b6t4a0kjxp08u"
+path="res://.godot/imported/toxodonte-fosil.jpeg-1997986bb7411f3a01e7fb9ada55a619.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/3-Gliptodonte imagen fosil.jpeg"
-dest_files=["res://.godot/imported/3-Gliptodonte imagen fosil.jpeg-8efc1a732bdfce85ea522aaf72aef4a0.ctex"]
+source_file="res://assets/sprites/animal-pics/toxodonte-fosil.jpeg"
+dest_files=["res://.godot/imported/toxodonte-fosil.jpeg-1997986bb7411f3a01e7fb9ada55a619.ctex"]
 
 [params]
 

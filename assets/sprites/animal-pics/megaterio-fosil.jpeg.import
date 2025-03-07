@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cucyp8jbo41fa"
-path="res://.godot/imported/4. imagen tigre diente de sable.jpeg-df72dc22b5160f34b3f582efa93b8ffc.ctex"
+uid="uid://bi5jjsfcrg2sa"
+path="res://.godot/imported/megaterio-fosil.jpeg-442516ed8a34dfa25f23e9a6e3da753d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/4. imagen tigre diente de sable.jpeg"
-dest_files=["res://.godot/imported/4. imagen tigre diente de sable.jpeg-df72dc22b5160f34b3f582efa93b8ffc.ctex"]
+source_file="res://assets/sprites/animal-pics/megaterio-fosil.jpeg"
+dest_files=["res://.godot/imported/megaterio-fosil.jpeg-442516ed8a34dfa25f23e9a6e3da753d.ctex"]
 
 [params]
 

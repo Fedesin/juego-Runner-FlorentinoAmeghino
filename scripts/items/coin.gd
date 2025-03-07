@@ -4,7 +4,7 @@ class_name Coin
 
 const frases = ["Wow!", "Increible!", "Solido!","Asombroso!","Buen trabajo!"]
 
-const Animal = preload("res://animal.gd")
+const Animal = preload("res://scripts/animal.gd")
 
 var animal: Animal
 

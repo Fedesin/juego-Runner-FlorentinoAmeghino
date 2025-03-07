@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b34v0aq4qgmcq"
-path="res://.godot/imported/2.2 esqueleto ave del etrror-  fosil.jpeg-87ac7ad9407f954c7b1df86f982b4eab.ctex"
+uid="uid://6u3ybriuok4m"
+path="res://.godot/imported/ave-del-terror-animal.jpeg-47c108ad348e226dcb687d4bf04ef4df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/2.2 esqueleto ave del etrror-  fosil.jpeg"
-dest_files=["res://.godot/imported/2.2 esqueleto ave del etrror-  fosil.jpeg-87ac7ad9407f954c7b1df86f982b4eab.ctex"]
+source_file="res://assets/sprites/animal-pics/ave-del-terror-animal.jpeg"
+dest_files=["res://.godot/imported/ave-del-terror-animal.jpeg-47c108ad348e226dcb687d4bf04ef4df.ctex"]
 
 [params]
 

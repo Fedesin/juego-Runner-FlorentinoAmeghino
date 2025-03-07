@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4dordsra5uks"
-path="res://.godot/imported/1- imagen megaterio.jpeg-cbec260ba06b9b6a37a2521c0423ccc1.ctex"
+uid="uid://det1nagtcfjbx"
+path="res://.godot/imported/gliptodonte-animal.jpeg-9e3c7dca75ec901cd7408e3bd8c66d73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/1- imagen megaterio.jpeg"
-dest_files=["res://.godot/imported/1- imagen megaterio.jpeg-cbec260ba06b9b6a37a2521c0423ccc1.ctex"]
+source_file="res://assets/sprites/animal-pics/gliptodonte-animal.jpeg"
+dest_files=["res://.godot/imported/gliptodonte-animal.jpeg-9e3c7dca75ec901cd7408e3bd8c66d73.ctex"]
 
 [params]
 

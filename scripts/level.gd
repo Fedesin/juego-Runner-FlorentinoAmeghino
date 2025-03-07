@@ -2,7 +2,7 @@ extends RefCounted  # Cambiado de Node a RefCounted para que sea una clase no ba
 
 class_name Level
 
-const Animal = preload("res://animal.gd")
+const Animal = preload("res://scripts/animal.gd")
 
 var animal: Animal
 var title: String

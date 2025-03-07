@@ -18,9 +18,14 @@ func _process(delta: float) -> void:
     var main = get_parent()
     var maxScore = main.getCurrentLevel().getMaxScore()
     if main.earned >= maxScore:
+        
         reset()
-        main.passLevel()
-        time_expired.emit()
+        #main.passLevel()
+        #time_expired.emit()
+        await main.playCutscene()
+        #main.passLevel()
+        
+        #time_expired.emit()
     
     """
     if time <= 0.0:

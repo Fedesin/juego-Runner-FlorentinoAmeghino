@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg2fiv2gfum4f"
-path="res://.godot/imported/5. toxodonte  imagen fosil.jpeg-15b4dd529d1bd5abba33e2dffb1c80e2.ctex"
+uid="uid://bxanddhh83k40"
+path="res://.godot/imported/toxodonte-animal.jpeg-d761700815fd2710d01f2fe9be641fbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/5. toxodonte  imagen fosil.jpeg"
-dest_files=["res://.godot/imported/5. toxodonte  imagen fosil.jpeg-15b4dd529d1bd5abba33e2dffb1c80e2.ctex"]
+source_file="res://assets/sprites/animal-pics/toxodonte-animal.jpeg"
+dest_files=["res://.godot/imported/toxodonte-animal.jpeg-d761700815fd2710d01f2fe9be641fbc.ctex"]
 
 [params]
 

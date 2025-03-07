@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuq55qhmwvlqd"
-path="res://.godot/imported/5. 1 toxodonte esqueleto.jpeg-cb5e272ad5f4fd7311d38976d14c7049.ctex"
+uid="uid://du2wmvc7bq8g6"
+path="res://.godot/imported/ave-del-terror-fosil.jpg-611866e26c582b17db3ff2e11bd265d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/5. 1 toxodonte esqueleto.jpeg"
-dest_files=["res://.godot/imported/5. 1 toxodonte esqueleto.jpeg-cb5e272ad5f4fd7311d38976d14c7049.ctex"]
+source_file="res://assets/sprites/animal-pics/ave-del-terror-fosil.jpg"
+dest_files=["res://.godot/imported/ave-del-terror-fosil.jpg-611866e26c582b17db3ff2e11bd265d4.ctex"]
 
 [params]
 

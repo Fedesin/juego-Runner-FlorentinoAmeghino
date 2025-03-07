@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c46u56kn4ir4y"]
+[gd_scene load_steps=29 format=3 uid="uid://c46u56kn4ir4y"]
 
 [ext_resource type="PackedScene" uid="uid://ce4x3xa1n7wsx" path="res://scenes/background.tscn" id="1_6icab"]
 [ext_resource type="PackedScene" uid="uid://c6kuvrcrxl2sr" path="res://scenes/ground.tscn" id="1_7x73t"]
@@ -21,6 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://w3a6bldv8nuf" path="res://scenes/objects/fridge.tscn" id="13_7dtbu"]
 [ext_resource type="PackedScene" uid="uid://xmcamt5xtmet" path="res://scenes/ui/menu.tscn" id="20_ym1el"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="21_ugs5p"]
+[ext_resource type="Script" path="res://scripts/cutscene.gd" id="22_ajwdw"]
+[ext_resource type="Shader" path="res://scenes/pixelate.gdshader" id="23_lgwg7"]
+[ext_resource type="Texture2D" uid="uid://6u3ybriuok4m" path="res://assets/sprites/animal-pics/ave-del-terror-animal.jpeg" id="24_0py3e"]
+[ext_resource type="Texture2D" uid="uid://4lst6lqjreur" path="res://assets/sprites/backgrounds/cutscene/background_shadow.png" id="25_h1dbg"]
+[ext_resource type="Texture2D" uid="uid://mrmvmkav2m77" path="res://assets/sprites/backgrounds/cutscene/background.png" id="25_la0mv"]
+[ext_resource type="Texture2D" uid="uid://cw02ttayl3oml" path="res://assets/sprites/animal-pics/florencioFace2.png" id="26_eyqq3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbr7q"]
+shader = ExtResource("23_lgwg7")
+shader_parameter/amount = 60.0
 
 [node name="Main" type="Node"]
 script = ExtResource("1_dejiq")
@@ -75,11 +85,97 @@ main = NodePath("..")
 [node name="Menu" parent="." instance=ExtResource("20_ym1el")]
 visible = false
 
+[node name="Cutscene" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("22_ajwdw")
+
+[node name="Photo" type="Sprite2D" parent="Cutscene"]
+material = SubResource("ShaderMaterial_rbr7q")
+position = Vector2(585, 300)
+scale = Vector2(0.332, 0.332)
+texture = ExtResource("24_0py3e")
+
+[node name="BackgroundShadow" type="Sprite2D" parent="Cutscene"]
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("25_h1dbg")
+
+[node name="Background" type="Sprite2D" parent="Cutscene"]
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("25_la0mv")
+
+[node name="AnimalName" type="RichTextLabel" parent="Cutscene"]
+offset_left = 317.0
+offset_top = 501.0
+offset_right = 844.0
+offset_bottom = 546.0
+rotation = 0.0174533
+size_flags_stretch_ratio = 1.23
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("21_ugs5p")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "[center][shake rate=15.0 level=5 connected=1]¡Texto con efecto shake![/shake][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Cutscene"]
+offset_left = 251.0
+offset_top = 48.0
+offset_right = 931.0
+offset_bottom = 93.0
+rotation = -0.0174533
+size_flags_stretch_ratio = 1.23
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("21_ugs5p")
+theme_override_font_sizes/font_size = 30
+text = "¡Encontraste todos los huesos!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Cutscene"]
+anchors_preset = -1
+anchor_left = -0.348529
+anchor_top = 11.0444
+anchor_right = -0.386765
+anchor_bottom = 11.0444
+offset_left = 654.019
+offset_top = -6563.74
+offset_right = 1352.02
+offset_bottom = -6518.74
+size_flags_stretch_ratio = 1.23
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("21_ugs5p")
+theme_override_font_sizes/font_size = 24
+text = "Presiona SPACE para continuar"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Florencio" type="Sprite2D" parent="Cutscene"]
+position = Vector2(119.781, 507.696)
+scale = Vector2(2.24437, 2.24437)
+texture = ExtResource("26_eyqq3")
+
+[node name="Overlay" type="ColorRect" parent="Cutscene"]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="game_end" from="." to="GameOver" method="_on_game_end"]
 [connection signal="reset_game" from="." to="HUD" method="reset"]
 [connection signal="reset_game" from="." to="GameOver" method="_on_reset_game"]
 [connection signal="start_game" from="." to="HUD" method="_on_start_game"]
 [connection signal="time_expired" from="HUD" to="." method="end_game"]
+[connection signal="time_expired" from="Cutscene" to="." method="end_game"]
 
 [editable path="Background"]
 [editable path="Ground"]

@@ -1,3 +1,9 @@
-Label
+RichTextLabel
 Sprite2D
+ColorRect
+CanvasLayer
+Node2D
+Node
+Camera2D
+Label
 AnimationPlayer

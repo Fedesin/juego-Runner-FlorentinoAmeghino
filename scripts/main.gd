@@ -59,10 +59,13 @@ var ground_scale: int
 
 var levels = Levels.new()
 
+var pausa = false
+
 signal reset_game
 signal start_game
 signal game_end
 
+var fosil_scene = load("res://scenes/cutscene.tscn")
 
 func _ready() -> void:
   screen_size = get_viewport().size
@@ -71,11 +74,20 @@ func _ready() -> void:
   $GameOver/Button.pressed.connect(new_game)
   new_game()
 
+func playCutscene():
+    var previousSpeed = speed
+    pausa = true
+    speed = 0
+    $Cutscene.visible = true
+    $Cutscene.playCutscene(getCurrentLevel().get_animal())
+    #speed = previousSpeed
+
 func getCurrentLevel() -> Level:
     return levels.get_level()
     
 func passLevel():
     levels.next()
+    pausa = false
 
 func _process(delta: float) -> void:
   # Show in-game menu when <ESC> is pressed
@@ -95,12 +107,13 @@ func _process(delta: float) -> void:
     else:
       return
 
-  speed = (
-    clamp(START_SPEED + score / SPEED_MODIFIER, START_SPEED, MAX_SPEED) * PROSTO_SPEED * delta
-  )
-  adjust_difficulty()
+  if not pausa:
+    speed = (
+        clamp(START_SPEED + score / SPEED_MODIFIER, START_SPEED, MAX_SPEED) * PROSTO_SPEED * delta
+    )
+    adjust_difficulty()
 
-  generate_item()
+    generate_item()
 
   # Move the player forward
   $Player.position.x += speed

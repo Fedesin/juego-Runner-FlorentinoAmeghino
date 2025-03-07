@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3a2fheq75kro"
-path="res://.godot/imported/4.1 esqueleto tigre diente de sable.jpeg-5594a84d623587e0b6f98547d5e13570.ctex"
+uid="uid://4lst6lqjreur"
+path="res://.godot/imported/background_shadow.png-7c9dfac6e2b1ac15477ffe881630aa7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/4.1 esqueleto tigre diente de sable.jpeg"
-dest_files=["res://.godot/imported/4.1 esqueleto tigre diente de sable.jpeg-5594a84d623587e0b6f98547d5e13570.ctex"]
+source_file="res://assets/sprites/backgrounds/cutscene/background_shadow.png"
+dest_files=["res://.godot/imported/background_shadow.png-7c9dfac6e2b1ac15477ffe881630aa7f.ctex"]
 
 [params]
 

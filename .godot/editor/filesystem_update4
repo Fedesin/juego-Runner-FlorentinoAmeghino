@@ -1,8 +1,7 @@
 res://scenes/main.tscn
 res://scripts/player.gd
 res://scenes/objects/miShader.gdshader
+res://scenes/pixelate.gdshader
 res://scenes/objects/blur.gdshader
-res://scenes/objects/chair.tscn
-res://scenes/objects/bookshelf.tscn
-res://scenes/objects/fridge.tscn
-res://scenes/cutscene.tscn
+res://scripts/cutscene.gd
+res://scenes/label1.gdshader

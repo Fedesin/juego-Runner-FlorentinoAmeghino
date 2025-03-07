@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3m2cpr0t6tbe"
-path="res://.godot/imported/3. 3 gliptodonte esqueleto fosil.jpeg-cba72ef5c8cb544c39e90f715abdc3e8.ctex"
+uid="uid://wavaqpr46l52"
+path="res://.godot/imported/gliptodonte-fosil.jpeg-efb5fdb7d5bacec36913c171e23b71e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/3. 3 gliptodonte esqueleto fosil.jpeg"
-dest_files=["res://.godot/imported/3. 3 gliptodonte esqueleto fosil.jpeg-cba72ef5c8cb544c39e90f715abdc3e8.ctex"]
+source_file="res://assets/sprites/animal-pics/gliptodonte-fosil.jpeg"
+dest_files=["res://.godot/imported/gliptodonte-fosil.jpeg-efb5fdb7d5bacec36913c171e23b71e3.ctex"]
 
 [params]
 

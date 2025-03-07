@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://ce4x3xa1n7wsx"]
 
-[ext_resource type="Texture2D" uid="uid://wi118gb1rfr3" path="res://assets/sprites/background/background.png" id="1_nu3sb"]
-[ext_resource type="Texture2D" uid="uid://ds78cdufiimwh" path="res://assets/sprites/background/layer2.png" id="2_w074x"]
-[ext_resource type="Texture2D" uid="uid://bfcu4ab1ctwqu" path="res://assets/sprites/background/layer1.png" id="3_yybvs"]
-[ext_resource type="Texture2D" uid="uid://cfsu5f1h46fs4" path="res://assets/sprites/background/layer3.png" id="4_dhr2g"]
-[ext_resource type="Texture2D" uid="uid://b1g0dcjpnsjc" path="res://assets/sprites/background/layer4.png" id="5_mvp64"]
+[ext_resource type="Texture2D" uid="uid://bbwifxuf6xt3s" path="res://assets/sprites/background/background.png" id="1_nu3sb"]
+[ext_resource type="Texture2D" uid="uid://bl7mfcclpb12c" path="res://assets/sprites/background/layer2.png" id="2_w074x"]
+[ext_resource type="Texture2D" uid="uid://ctym4p1nm34q5" path="res://assets/sprites/background/layer1.png" id="3_yybvs"]
+[ext_resource type="Texture2D" uid="uid://dg3m4v06sanb5" path="res://assets/sprites/background/layer3.png" id="4_dhr2g"]
+[ext_resource type="Texture2D" uid="uid://6kwkwvlo6tlu" path="res://assets/sprites/background/layer4.png" id="5_mvp64"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyn56"]
 atlas = ExtResource("5_mvp64")
