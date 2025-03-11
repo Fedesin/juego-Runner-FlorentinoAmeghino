@@ -89,7 +89,7 @@ func getCurrentLevel() -> Level:
 func passLevel():
     levels.next()
     pausa = false
-    await get_tree().create_timer(0.1).timeout
+    await get_tree().create_timer(0.3).timeout
     cutscene_playing = false
 
 func _process(delta: float) -> void:

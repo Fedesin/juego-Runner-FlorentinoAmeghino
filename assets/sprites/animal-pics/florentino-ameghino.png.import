@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lvgw7vuuva62"
-path="res://.godot/imported/Florentino Ameghino b.jpeg-f11f1c3fcd856be7269c4c9890dde932.ctex"
+uid="uid://bmqn8omsmppv"
+path="res://.godot/imported/florentino-ameghino.png-49662d2342e20d1637487158d747e673.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animal-pics/Florentino Ameghino b.jpeg"
-dest_files=["res://.godot/imported/Florentino Ameghino b.jpeg-f11f1c3fcd856be7269c4c9890dde932.ctex"]
+source_file="res://assets/sprites/animal-pics/florentino-ameghino.png"
+dest_files=["res://.godot/imported/florentino-ameghino.png-49662d2342e20d1637487158d747e673.ctex"]
 
 [params]
 
