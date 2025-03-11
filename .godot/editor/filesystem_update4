@@ -8,3 +8,4 @@ res://scripts/main.gd
 res://scripts/ui/hud.gd
 res://scripts/cutscene.gd
 res://scenes/ui/hud.tscn
+res://scenes/ui/game_over.tscn

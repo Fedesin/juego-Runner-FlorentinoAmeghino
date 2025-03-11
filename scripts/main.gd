@@ -60,6 +60,7 @@ var ground_scale: int
 var levels = Levels.new()
 
 var pausa = false
+var cutscene_playing = false
 
 signal reset_game
 signal start_game
@@ -88,6 +89,8 @@ func getCurrentLevel() -> Level:
 func passLevel():
     levels.next()
     pausa = false
+    await get_tree().create_timer(0.1).timeout
+    cutscene_playing = false
 
 func _process(delta: float) -> void:
   # Show in-game menu when <ESC> is pressed
@@ -98,7 +101,7 @@ func _process(delta: float) -> void:
 
   # Start the game if received input to do so, otherwise halt the game loop
   if not game_running:
-    if Input.is_action_pressed("jump"):
+    if Input.is_action_pressed("jump") and (not cutscene_playing):
       game_running = true
       $HUD/StartLabel.hide()
       var tween = get_tree().create_tween()
@@ -256,8 +259,9 @@ func end_game() -> void:
   $GameOver/Earned.modulate = Color.GREEN
   $GameOver/Earned.reset()
   $GameOver/Money.text = money.print()
-  $GameOver.show()
+  #$GameOver.show()
   game_end.emit()
+  new_game()
 
 
 func generate_cat() -> void:

@@ -13,6 +13,8 @@ func _ready():
     pass
     
 func playCutscene(animal: Animal):
+    var main = get_parent()
+    main.cutscene_playing = true
     $AnimalName.modulate.a = 0.0
     $Overlay.modulate.a = 1.0  # Totalmente opaco
     mater.set_shader_parameter("amount", 100.0)
