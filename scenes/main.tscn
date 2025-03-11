@@ -139,7 +139,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Cutscene"]
 anchors_preset = -1
-anchor_left = -0.348529
+anchor_left = -0.386765
 anchor_top = 11.0444
 anchor_right = -0.386765
 anchor_bottom = 11.0444
@@ -165,7 +165,6 @@ scale = Vector2(2.24437, 2.24437)
 texture = ExtResource("26_eyqq3")
 
 [node name="Overlay" type="ColorRect" parent="Cutscene"]
-visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)

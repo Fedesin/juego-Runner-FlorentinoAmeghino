@@ -13,6 +13,7 @@ func _ready():
     pass
     
 func playCutscene(animal: Animal):
+    $AnimalName.modulate.a = 0.0
     $Overlay.modulate.a = 1.0  # Totalmente opaco
     mater.set_shader_parameter("amount", 100.0)
     var animalNameText = "[center][shake rate=15.0 level=5 connected=1]" + animal.name + "[/shake][/center]"
@@ -26,7 +27,23 @@ func playCutscene(animal: Animal):
     await get_tree().create_timer(0.4).timeout
     animalAnimation(animal)
     await get_tree().create_timer(6.4).timeout
+
+func animalNameAnimation():
+    var tween = get_tree().create_tween()
     
+    # Centrar el pivote para que la escala sea uniforme
+    $AnimalName.pivot_offset = $AnimalName.size / 2
+
+    # Asegurar que comience grande
+    $AnimalName.scale = Vector2(2.0, 2.0)  # Escala inicial (más grande)
+    # Animar tamaño y caída con suavizado
+    tween.tween_property($AnimalName, "modulate:a", 1.0, 0.7)
+    tween.tween_property($AnimalName, "scale", Vector2(1.0, 1.0), 0.7)
+
+    # Suavizado con efecto rebote
+    tween.set_trans(Tween.TRANS_CUBIC)
+    tween.set_ease(Tween.EASE_OUT)
+
 func pressSpaceAnimation():
     while skip:
         var tween = get_tree().create_tween()
@@ -46,7 +63,10 @@ func animalAnimation(animal: Animal):
     tween.set_trans(Tween.TRANS_CUBIC)  # Hace la animación más suave
     tween.set_ease(Tween.EASE_OUT)  # Disminuye rápido al inicio y luego más lento
     
-    await get_tree().create_timer(4).timeout
+    await get_tree().create_timer(1.4).timeout
+    animalNameAnimation()
+    await get_tree().create_timer(2.6).timeout
+    
     
     var tween2 = get_tree().create_tween()
     tween2.tween_property(mater, "shader_parameter/amount", 300, 1.0)  # Cambia `amount` a 0 en 2 segundos
@@ -70,8 +90,8 @@ func florencioAnimation():
     var tween = get_tree().create_tween()
     var sprite: Sprite2D = get_node("Florencio")
     var shake = 5
-    var shake_duration = 0.3
-    var shake_count = 20
+    var shake_duration = 0.4
+    var shake_count = 25
     for i in range(shake_count):
         var shake_offset = Vector2(randf_range(-shake, shake), randf_range(-shake, shake))
         tween.tween_property(sprite, "position", sprite.position + shake_offset, shake_duration)

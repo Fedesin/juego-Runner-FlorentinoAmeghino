@@ -3,5 +3,8 @@ res://scripts/player.gd
 res://scenes/objects/miShader.gdshader
 res://scenes/pixelate.gdshader
 res://scenes/objects/blur.gdshader
-res://scripts/cutscene.gd
 res://scenes/label1.gdshader
+res://scripts/main.gd
+res://scripts/ui/hud.gd
+res://scripts/cutscene.gd
+res://scenes/ui/hud.tscn

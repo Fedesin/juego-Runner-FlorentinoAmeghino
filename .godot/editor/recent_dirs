@@ -1,9 +1,9 @@
-res://assets/sprites/backgrounds/cutscene
 res://scenes
+res://scenes/ui
+res://assets/sprites/backgrounds/cutscene
 res://scripts
 res://assets/sprites/animal-pics
 res://scenes/objects
-res://scenes/ui
 res://assets/fonts
 res://assets/sprites/obstacles
 res://assets/sprites/cats
