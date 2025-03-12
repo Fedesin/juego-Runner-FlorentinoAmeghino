@@ -2,10 +2,9 @@ res://scenes/main.tscn
 res://scripts/player.gd
 res://scenes/objects/miShader.gdshader
 res://scenes/pixelate.gdshader
+res://scenes/circle.gdshader
 res://scenes/objects/blur.gdshader
 res://scenes/label1.gdshader
-res://scripts/main.gd
-res://scripts/ui/hud.gd
-res://scripts/cutscene.gd
-res://scenes/ui/hud.tscn
-res://scenes/ui/game_over.tscn
+res://scenes/intro.tscn
+res://scenes/objects/coin.tscn
+res://scenes/intro.gd

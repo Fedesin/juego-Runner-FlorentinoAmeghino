@@ -1,0 +1,217 @@
+[gd_scene load_steps=25 format=3 uid="uid://jx6mifletg4i"]
+
+[ext_resource type="PackedScene" uid="uid://ce4x3xa1n7wsx" path="res://scenes/background.tscn" id="1_6hy13"]
+[ext_resource type="Script" path="res://scenes/intro.gd" id="1_337oa"]
+[ext_resource type="PackedScene" uid="uid://c6kuvrcrxl2sr" path="res://scenes/ground.tscn" id="2_ndxrh"]
+[ext_resource type="PackedScene" uid="uid://dfcsh5b7ftcru" path="res://scenes/player.tscn" id="3_a2dtq"]
+[ext_resource type="Script" path="res://scenes/player_intro.gd" id="4_7kt0j"]
+[ext_resource type="FontFile" uid="uid://ct8lvmg7vylbs" path="res://assets/fonts/typeface-mario-world-pixel-font/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="4_l2gfi"]
+[ext_resource type="FontFile" uid="uid://kqw56ndy08bq" path="res://assets/fonts/pixel-cowboy-font/PixelCowboy-l7we.ttf" id="5_15kky"]
+[ext_resource type="Texture2D" uid="uid://b1n46fj2lidcj" path="res://assets/sprites/powerups/megaterio/craneo.png" id="7_px5id"]
+[ext_resource type="Shader" path="res://scenes/shine.gdshader" id="7_qt4ii"]
+[ext_resource type="Texture2D" uid="uid://dgpx06mgtfdng" path="res://assets/sprites/powerups/gliptodonte/craneo.png" id="9_0lgu8"]
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="10_i6eik"]
+[ext_resource type="Shader" path="res://scenes/circle.gdshader" id="12_g43ls"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kt0kv"]
+shader = ExtResource("7_qt4ii")
+shader_parameter/size_effect = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+shader_parameter/pause_duration = 0.5
+shader_parameter/texture_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ngexc"]
+shader = ExtResource("7_qt4ii")
+shader_parameter/size_effect = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+shader_parameter/pause_duration = 0.5
+shader_parameter/texture_size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oth8m"]
+atlas = ExtResource("7_px5id")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltasi"]
+atlas = ExtResource("7_px5id")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qxol"]
+atlas = ExtResource("7_px5id")
+region = Rect2(36, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6i08"]
+atlas = ExtResource("7_px5id")
+region = Rect2(54, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r1bo"]
+atlas = ExtResource("9_0lgu8")
+region = Rect2(36, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q0hl"]
+atlas = ExtResource("9_0lgu8")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egnqa"]
+atlas = ExtResource("9_0lgu8")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eomrb"]
+atlas = ExtResource("9_0lgu8")
+region = Rect2(54, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lcrfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oth8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltasi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qxol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6i08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r1bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q0hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egnqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eomrb")
+}],
+"loop": true,
+"name": &"reverse",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_voabc"]
+shader = ExtResource("12_g43ls")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.0
+shader_parameter/smoothness = 0.05
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_337oa")
+
+[node name="Background" parent="." instance=ExtResource("1_6hy13")]
+
+[node name="Ground" parent="." instance=ExtResource("2_ndxrh")]
+
+[node name="Sprite2D" parent="Ground" index="0"]
+scale = Vector2(3, 3)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Player" parent="." instance=ExtResource("3_a2dtq")]
+position = Vector2(150, 444)
+script = ExtResource("4_7kt0j")
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+z_index = 0
+autoplay = ""
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+position = Vector2(-0.5, -0.5)
+
+[node name="Title2" type="RichTextLabel" parent="."]
+material = SubResource("ShaderMaterial_kt0kv")
+offset_left = 242.0
+offset_top = 94.0
+offset_right = 1096.0
+offset_bottom = 235.0
+rotation = -0.0882452
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/normal_font = ExtResource("4_l2gfi")
+theme_override_font_sizes/normal_font_size = 63
+bbcode_enabled = true
+text = "[center]Ameghino[/center]"
+
+[node name="Title1" type="RichTextLabel" parent="."]
+material = SubResource("ShaderMaterial_ngexc")
+offset_left = 104.0
+offset_top = 23.0
+offset_right = 958.0
+offset_bottom = 158.0
+rotation = -0.0705751
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/normal_font = ExtResource("4_l2gfi")
+theme_override_font_sizes/normal_font_size = 61
+bbcode_enabled = true
+text = "[center]Florentino [/center]"
+
+[node name="Subtitle" type="RichTextLabel" parent="."]
+offset_left = 237.0
+offset_top = 186.0
+offset_right = 913.0
+offset_bottom = 253.0
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/normal_font = ExtResource("5_15kky")
+theme_override_font_sizes/normal_font_size = 53
+bbcode_enabled = true
+text = "[center]¡Descubriendo Fósiles![/center]"
+
+[node name="Skull1" type="AnimatedSprite2D" parent="."]
+position = Vector2(874, 223)
+scale = Vector2(4.38889, 4.38889)
+sprite_frames = SubResource("SpriteFrames_lcrfw")
+
+[node name="Skull2" type="AnimatedSprite2D" parent="."]
+position = Vector2(274.5, 218.5)
+scale = Vector2(4.38889, 4.38889)
+sprite_frames = SubResource("SpriteFrames_lcrfw")
+animation = &"reverse"
+
+[node name="PressSpace" type="RichTextLabel" parent="."]
+offset_left = 234.0
+offset_top = 487.0
+offset_right = 910.0
+offset_bottom = 554.0
+theme_override_colors/default_color = Color(0.921569, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_separation = 0
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("10_i6eik")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center]Presiona SPACE para jugar[/center]"
+
+[node name="Overlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_voabc")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[editable path="Background"]
+[editable path="Ground"]
+[editable path="Player"]
