@@ -73,6 +73,7 @@ func _ready() -> void:
   ground_height = $Ground/Sprite2D.texture.get_height()
   ground_scale = $Ground/Sprite2D.scale.y
   $GameOver/Button.pressed.connect(new_game)
+  $DamageFrame.modulate.a = 0
   new_game()
 
 func playCutscene():
@@ -85,6 +86,20 @@ func playCutscene():
 
 func getCurrentLevel() -> Level:
     return levels.get_level()
+    
+func damage():
+    var shader_material = $Player/AnimatedSprite2D.material
+    var tween = get_tree().create_tween()
+    shader_material.set_shader_parameter("shock_progress", 1.0)
+    shader_material.set_shader_parameter("amplitude", 0.2)  # Antes estaba en 0.5, ahora lo reducimos
+    # Interpola de 1.0 a 0.0 en 0.5 segundosj
+    tween.tween_property(shader_material, "shader_parameter/shock_progress", 0.0, 0.5)
+    tween.tween_property(shader_material, "shader_parameter/amplitude", 0.0, 0.5)  # Reduce amplitud
+    
+func screenDamage():
+    var tween = get_tree().create_tween()
+    $DamageFrame.modulate.a = 1
+    tween.tween_property($DamageFrame, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
     
 func passLevel():
     levels.next()

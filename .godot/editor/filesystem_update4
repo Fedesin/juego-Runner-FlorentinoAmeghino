@@ -1,10 +1,13 @@
-res://scenes/main.tscn
+res://scenes/intro.tscn
 res://scripts/player.gd
 res://scenes/objects/miShader.gdshader
 res://scenes/pixelate.gdshader
 res://scenes/circle.gdshader
 res://scenes/objects/blur.gdshader
 res://scenes/label1.gdshader
-res://scenes/intro.tscn
-res://scenes/objects/coin.tscn
-res://scenes/intro.gd
+res://scripts/main.gd
+res://scenes/player.tscn
+res://scenes/objects/chair.tscn
+res://scenes/damage.gdshader
+res://scripts/items/obstacle.gd
+res://scenes/main.tscn

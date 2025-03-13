@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c46u56kn4ir4y"]
+[gd_scene load_steps=34 format=3 uid="uid://c46u56kn4ir4y"]
 
 [ext_resource type="PackedScene" uid="uid://ce4x3xa1n7wsx" path="res://scenes/background.tscn" id="1_6icab"]
 [ext_resource type="PackedScene" uid="uid://c6kuvrcrxl2sr" path="res://scenes/ground.tscn" id="1_7x73t"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://so22h6q30vhj" path="res://scenes/objects/chair.tscn" id="11_uxcue"]
 [ext_resource type="PackedScene" uid="uid://cmoxx3oim36xs" path="res://scenes/objects/coin.tscn" id="12_lcvrn"]
 [ext_resource type="PackedScene" uid="uid://w3a6bldv8nuf" path="res://scenes/objects/fridge.tscn" id="13_7dtbu"]
+[ext_resource type="Shader" path="res://scenes/damage.gdshader" id="17_f7cwu"]
 [ext_resource type="FontFile" uid="uid://kqw56ndy08bq" path="res://assets/fonts/pixel-cowboy-font/PixelCowboy-l7we.ttf" id="18_0uq70"]
 [ext_resource type="FontFile" uid="uid://uqao480wegj4" path="res://assets/fonts/pixel-digivolve-font/PixelDigivolve-mOm9.ttf" id="19_ete86"]
 [ext_resource type="PackedScene" uid="uid://xmcamt5xtmet" path="res://scenes/ui/menu.tscn" id="20_ym1el"]
@@ -29,6 +30,14 @@
 [ext_resource type="Texture2D" uid="uid://4lst6lqjreur" path="res://assets/sprites/backgrounds/cutscene/background_shadow.png" id="25_h1dbg"]
 [ext_resource type="Texture2D" uid="uid://mrmvmkav2m77" path="res://assets/sprites/backgrounds/cutscene/background.png" id="25_la0mv"]
 [ext_resource type="Texture2D" uid="uid://bmqn8omsmppv" path="res://assets/sprites/animal-pics/florentino-ameghino.png" id="27_j4xh1"]
+[ext_resource type="Texture2D" uid="uid://h0joaplmoajq" path="res://assets/sprites/backgrounds/damage.png" id="31_k5167"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ogxin"]
+shader = ExtResource("17_f7cwu")
+shader_parameter/shock_color = Color(1, 0, 0, 1)
+shader_parameter/amplitude = 30.0
+shader_parameter/frequency = 10.0
+shader_parameter/shock_progress = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rbr7q"]
 shader = ExtResource("23_lgwg7")
@@ -53,6 +62,7 @@ scale = Vector2(3, 3)
 position = Vector2(150, 444)
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
+material = SubResource("ShaderMaterial_ogxin")
 autoplay = ""
 
 [node name="CollisionShape2D" parent="Player" index="1"]
@@ -198,6 +208,11 @@ texture = ExtResource("27_j4xh1")
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
+
+[node name="DamageFrame" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("31_k5167")
 
 [connection signal="game_end" from="." to="GameOver" method="_on_game_end"]
 [connection signal="reset_game" from="." to="HUD" method="reset"]

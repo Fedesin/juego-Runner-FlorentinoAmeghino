@@ -1,9 +1,10 @@
+res://assets/sprites/backgrounds
 res://scenes
+res://scenes/objects
 res://assets/fonts/pixel-digivolve-font
 res://assets/fonts/pixel-cowboy-font
 res://assets/fonts
 res://assets/sprites/powerups/gliptodonte
-res://scenes/objects
 res://assets/sprites/powerups/megaterio
 res://scripts/misc
 res://assets/fonts/typeface-mario-world-pixel-font

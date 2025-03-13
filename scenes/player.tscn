@@ -1,11 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfcsh5b7ftcru"]
+[gd_scene load_steps=22 format=3 uid="uid://dfcsh5b7ftcru"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_r1ckd"]
+[ext_resource type="Shader" path="res://scenes/damage.gdshader" id="2_br8hw"]
 [ext_resource type="Texture2D" uid="uid://bpxyctkwi1768" path="res://assets/sprites/cats/florentino-iddle.png" id="2_tuxes"]
 [ext_resource type="Texture2D" uid="uid://clou5jus6gk17" path="res://assets/sprites/cats/florentino-jump.png" id="3_fsoj5"]
 [ext_resource type="Texture2D" uid="uid://bdumdopxx54a0" path="res://assets/sprites/cats/florentino-run.png" id="4_sexa3"]
 [ext_resource type="AudioStream" uid="uid://dscpg6m666dta" path="res://assets/audio/sfx/player/jump.wav" id="5_6m7s0"]
 [ext_resource type="AudioStream" uid="uid://buhfcj07y8kd4" path="res://assets/audio/sfx/player/hit.wav" id="6_u4dhk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ipkmp"]
+shader = ExtResource("2_br8hw")
+shader_parameter/shock_color = Color(1, 0, 0, 1)
+shader_parameter/amplitude = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/shock_progress = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lc6du"]
 atlas = ExtResource("2_tuxes")
@@ -110,6 +118,7 @@ script = ExtResource("1_r1ckd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
+material = SubResource("ShaderMaterial_ipkmp")
 scale = Vector2(4.44444, 4.44444)
 sprite_frames = SubResource("SpriteFrames_fba08")
 animation = &"idle"
