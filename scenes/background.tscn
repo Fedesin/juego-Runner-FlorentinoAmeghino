@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://ce4x3xa1n7wsx"]
 
-[ext_resource type="Texture2D" uid="uid://bbwifxuf6xt3s" path="res://assets/sprites/background/background.png" id="1_nu3sb"]
+[ext_resource type="Texture2D" uid="uid://ia3ocgbek4xg" path="res://assets/sprites/backgrounds/dia/background.png" id="1_yv420"]
 [ext_resource type="Texture2D" uid="uid://bl7mfcclpb12c" path="res://assets/sprites/background/layer2.png" id="2_w074x"]
-[ext_resource type="Texture2D" uid="uid://ctym4p1nm34q5" path="res://assets/sprites/background/layer1.png" id="3_yybvs"]
 [ext_resource type="Texture2D" uid="uid://dg3m4v06sanb5" path="res://assets/sprites/background/layer3.png" id="4_dhr2g"]
+[ext_resource type="Texture2D" uid="uid://bs0ytkammbbq7" path="res://assets/sprites/backgrounds/dia/layer1.png" id="4_ywlyh"]
 [ext_resource type="Texture2D" uid="uid://6kwkwvlo6tlu" path="res://assets/sprites/background/layer4.png" id="5_mvp64"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyn56"]
@@ -38,8 +38,8 @@ animations = [{
 [node name="Background" type="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(6, 6)
-texture = ExtResource("1_nu3sb")
+scale = Vector2(0.383659, 0.383659)
+texture = ExtResource("1_yv420")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
@@ -54,6 +54,7 @@ autoplay = "burn"
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+visible = false
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(1152, 0)
 
@@ -67,8 +68,8 @@ motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-scale = Vector2(3.00926, 3.00926)
-texture = ExtResource("3_yybvs")
+scale = Vector2(0.412561, 0.412561)
+texture = ExtResource("4_ywlyh")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]

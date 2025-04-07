@@ -233,7 +233,7 @@ func generate_item() -> void:
       + (2 * item_scale.y)
     )
 
-    add_item(item, item_x, item_y)
+    add_item(item, item_x, item_y + -200)
 
 
 func add_item(item: Item, x: int, y: int) -> void:
