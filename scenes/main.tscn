@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bu4jalvua6jk" path="res://scenes/cats/orange_cat.tscn" id="5_lt0db"]
 [ext_resource type="PackedScene" uid="uid://b2ygwns5dr211" path="res://scenes/ui/hud.tscn" id="5_mo7pu"]
 [ext_resource type="PackedScene" uid="uid://dnbk8hwdwvkd7" path="res://scenes/cats/white_cat.tscn" id="6_wosea"]
-[ext_resource type="PackedScene" uid="uid://dtasl0kw0cfjo" path="res://scenes/cats/blue_cat.tscn" id="7_7nnaf"]
+[ext_resource type="PackedScene" uid="uid://dtasl0kw0cfjo" path="res://scenes/npc/megaterio.tscn" id="7_7nnaf"]
 [ext_resource type="PackedScene" uid="uid://c0waeo1kbmicg" path="res://scenes/ui/running_music.tscn" id="8_i004v"]
 [ext_resource type="PackedScene" uid="uid://dwccscvhgbkaj" path="res://scenes/cats/pink_cat.tscn" id="9_0rni0"]
 [ext_resource type="PackedScene" uid="uid://bqugp4dysqfuk" path="res://scenes/objects/bookshelf.tscn" id="10_2vmp8"]
@@ -51,6 +51,7 @@ blue_cat = ExtResource("7_7nnaf")
 green_cat = ExtResource("5_f3a1g")
 pink_cat = ExtResource("9_0rni0")
 item_variants = Array[PackedScene]([ExtResource("10_2vmp8"), ExtResource("11_uxcue"), ExtResource("12_lcvrn"), ExtResource("13_7dtbu")])
+megaterio = ExtResource("7_7nnaf")
 metadata/_edit_horizontal_guides_ = [-18456.0]
 
 [node name="Background" parent="." instance=ExtResource("1_6icab")]

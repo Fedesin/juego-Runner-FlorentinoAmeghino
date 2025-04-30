@@ -68,7 +68,11 @@ signal game_end
 
 var fosil_scene = load("res://scenes/cutscene.tscn")
 
+@export var megaterio: PackedScene
+var megaterio_companion: Megaterio
+
 func _ready() -> void:
+  add_megaterio()
   screen_size = get_viewport().size
   ground_height = $Ground/Sprite2D.texture.get_height()
   ground_scale = $Ground/Sprite2D.scale.y
@@ -303,3 +307,10 @@ func add_cat(cat_type: PackedScene) -> Cat:
   cat.global_position.y = PLAYER_START_POS.y
 
   return cat
+
+func add_megaterio():
+  megaterio_companion = megaterio.instantiate()
+  $Camera2D.add_child(megaterio_companion)
+
+  megaterio_companion.global_position.x = $Player.position.x - randi_range(45, PLAYER_START_POS.x)
+  megaterio_companion.global_position.y = PLAYER_START_POS.y
