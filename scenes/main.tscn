@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c46u56kn4ir4y"]
+[gd_scene load_steps=36 format=3 uid="uid://c46u56kn4ir4y"]
 
 [ext_resource type="PackedScene" uid="uid://ce4x3xa1n7wsx" path="res://scenes/background.tscn" id="1_6icab"]
 [ext_resource type="PackedScene" uid="uid://c6kuvrcrxl2sr" path="res://scenes/ground.tscn" id="1_7x73t"]
@@ -22,15 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://crdrtsdoo61s1" path="res://assets/sprites/backgrounds/dia/ground.png" id="16_5b566"]
 [ext_resource type="Shader" path="res://scenes/damage.gdshader" id="17_f7cwu"]
 [ext_resource type="FontFile" uid="uid://kqw56ndy08bq" path="res://assets/fonts/pixel-cowboy-font/PixelCowboy-l7we.ttf" id="18_0uq70"]
+[ext_resource type="Texture2D" uid="uid://cnrtt2phaubmn" path="res://assets/sprites/cats/shadow.png" id="19_8hq3d"]
 [ext_resource type="FontFile" uid="uid://uqao480wegj4" path="res://assets/fonts/pixel-digivolve-font/PixelDigivolve-mOm9.ttf" id="19_ete86"]
 [ext_resource type="PackedScene" uid="uid://xmcamt5xtmet" path="res://scenes/ui/menu.tscn" id="20_ym1el"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="21_ugs5p"]
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="22_ajwdw"]
 [ext_resource type="Shader" path="res://scenes/pixelate.gdshader" id="23_lgwg7"]
-[ext_resource type="Texture2D" uid="uid://6u3ybriuok4m" path="res://assets/sprites/animal-pics/ave-del-terror-animal.jpeg" id="24_0py3e"]
 [ext_resource type="Texture2D" uid="uid://4lst6lqjreur" path="res://assets/sprites/backgrounds/cutscene/background_shadow.png" id="25_h1dbg"]
 [ext_resource type="Texture2D" uid="uid://mrmvmkav2m77" path="res://assets/sprites/backgrounds/cutscene/background.png" id="25_la0mv"]
 [ext_resource type="Texture2D" uid="uid://bmqn8omsmppv" path="res://assets/sprites/animal-pics/florentino-ameghino.png" id="27_j4xh1"]
+[ext_resource type="Texture2D" uid="uid://bhkig6ayohwrk" path="res://assets/sprites/animals/oldAnimals/dientes-de-sable-fosil.png" id="28_5s638"]
 [ext_resource type="Texture2D" uid="uid://h0joaplmoajq" path="res://assets/sprites/backgrounds/damage.png" id="31_k5167"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ogxin"]
@@ -64,7 +65,7 @@ scale = Vector2(0.5256, 0.477124)
 texture = ExtResource("16_5b566")
 
 [node name="Player" parent="." instance=ExtResource("2_rrhh7")]
-position = Vector2(150, 444)
+position = Vector2(150, 429)
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
 material = SubResource("ShaderMaterial_ogxin")
@@ -72,6 +73,12 @@ autoplay = ""
 
 [node name="CollisionShape2D" parent="Player" index="1"]
 position = Vector2(-0.5, -0.5)
+
+[node name="Shadow" type="Sprite2D" parent="Player"]
+modulate = Color(1, 1, 1, 0.521569)
+position = Vector2(9.53674e-07, 42)
+scale = Vector2(3.40972, 1.98264)
+texture = ExtResource("19_8hq3d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -136,9 +143,9 @@ script = ExtResource("22_ajwdw")
 
 [node name="Photo" type="Sprite2D" parent="Cutscene"]
 material = SubResource("ShaderMaterial_rbr7q")
-position = Vector2(585, 300)
-scale = Vector2(0.332, 0.332)
-texture = ExtResource("24_0py3e")
+position = Vector2(576, 324)
+scale = Vector2(0.409286, 0.409286)
+texture = ExtResource("28_5s638")
 
 [node name="BackgroundShadow" type="Sprite2D" parent="Cutscene"]
 position = Vector2(576, 324)

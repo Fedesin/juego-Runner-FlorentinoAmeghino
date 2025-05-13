@@ -6,6 +6,6 @@ res://scenes/pixelate.gdshader
 res://scenes/objects/blur.gdshader
 res://scenes/label1.gdshader
 res://scenes/circle.gdshader
-res://scripts/main.gd
-res://scripts/megaterio.gd
 res://scenes/npc/megaterio.tscn
+res://scenes/player.tscn
+res://scripts/levels.gd

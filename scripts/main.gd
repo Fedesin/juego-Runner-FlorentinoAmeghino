@@ -68,11 +68,13 @@ signal game_end
 
 var fosil_scene = load("res://scenes/cutscene.tscn")
 
+var initial_shadow_y = 0
+
 @export var megaterio: PackedScene
 var megaterio_companion: Megaterio
 
 func _ready() -> void:
-  add_megaterio()
+  initial_shadow_y = $Player.global_position.y + 40
   screen_size = get_viewport().size
   ground_height = $Ground/Sprite2D.texture.get_height()
   ground_scale = $Ground/Sprite2D.scale.y
@@ -112,6 +114,8 @@ func passLevel():
     cutscene_playing = false
 
 func _process(delta: float) -> void:
+  $Player/Shadow.global_position.x = $Player.global_position.x
+  $Player/Shadow.global_position.y = initial_shadow_y # fijá esta constante o cálculo con el nivel del suelo
   # Show in-game menu when <ESC> is pressed
   if Input.is_action_just_pressed("menu"):
     $Menu.show()
@@ -187,6 +191,10 @@ func new_game() -> void:
   tween.tween_property($HUD/TitleLabel, "modulate:a", 1, 0)
   $HUD/TitleLabel.text = levels.get_level().get_title()
   change_background()
+  if getCurrentLevel().companion:
+    add_megaterio()
+  else:
+    remove_megaterio()
   reset_game.emit()
 
 
@@ -309,8 +317,14 @@ func add_cat(cat_type: PackedScene) -> Cat:
   return cat
 
 func add_megaterio():
-  megaterio_companion = megaterio.instantiate()
-  $Camera2D.add_child(megaterio_companion)
+  if not megaterio_companion:
+    megaterio_companion = megaterio.instantiate()
+    $Camera2D.add_child(megaterio_companion)
 
-  megaterio_companion.global_position.x = $Player.position.x - randi_range(45, PLAYER_START_POS.x)
-  megaterio_companion.global_position.y = PLAYER_START_POS.y
+    megaterio_companion.global_position.x = $Player.position.x - randi_range(45, PLAYER_START_POS.x)
+    megaterio_companion.global_position.y = PLAYER_START_POS.y
+
+func remove_megaterio():
+    if megaterio_companion and megaterio_companion.get_parent():
+        megaterio_companion.queue_free()
+        megaterio_companion = null

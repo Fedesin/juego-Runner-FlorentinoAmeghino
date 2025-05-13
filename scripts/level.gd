@@ -8,13 +8,15 @@ var animal: Animal
 var title: String
 var scene: String
 var maxScore: int
+var companion: bool
 
 # Constructor (_init en GDScript)
-func _init(level_name: String, _animal: Animal, _maxScore:int, _scene: String):
+func _init(level_name: String, _animal: Animal, _maxScore:int, _scene: String, _companion: bool):
     title = level_name
     animal = _animal
     maxScore = _maxScore
     scene = _scene
+    companion = _companion
 
 # Métodos para obtener los valores
 func get_title() -> String:
@@ -28,3 +30,6 @@ func getMaxScore() -> int:
 
 func get_scene() -> String:
     return scene
+
+func get_companion() -> bool:
+    return companion

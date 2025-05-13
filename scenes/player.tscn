@@ -121,7 +121,7 @@ z_index = 1
 material = SubResource("ShaderMaterial_ipkmp")
 scale = Vector2(4.44444, 4.44444)
 sprite_frames = SubResource("SpriteFrames_fba08")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

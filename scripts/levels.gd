@@ -7,21 +7,21 @@ var Level = preload("res://scripts/level.gd")
 const Animal = preload("res://scripts/animal.gd")
 
 # Crear animales == crearAnimal( NOMBRE, SPRITE-IN-GAME, FOTO-FOSIL, FOTO-ANIMAL)
-var dientesDeSable = crearAnimal("Tigre Diente de Sable", "res://assets/sprites/powerups/dientes-de-sable/", "res://assets/sprites/animal-pics/dientes-de-sable-fosil.jpg", "res://assets/sprites/animal-pics/dientes-de-sable-animal.jpg")
-var aveDelTerror = crearAnimal("Ave del Terror", "res://assets/sprites/powerups/ave-del-terror/", "res://assets/sprites/animal-pics/ave-del-terror-fosil.jpg", "res://assets/sprites/animal-pics/ave-del-terror-animal.jpeg")
-var toxodonte = crearAnimal("Toxodonte", "res://assets/sprites/powerups/toxodonte/", "res://assets/sprites/animal-pics/toxodonte-fosil.jpeg", "res://assets/sprites/animal-pics/toxodonte-animal.jpeg")
-var gliptodonte = crearAnimal("Gliptodonte", "res://assets/sprites/powerups/gliptodonte/", "res://assets/sprites/animal-pics/gliptodonte-fosil.jpeg", "res://assets/sprites/animal-pics/gliptodonte-animal.jpeg")
-var megaterio = crearAnimal("Megaterio", "res://assets/sprites/powerups/megaterio/", "res://assets/sprites/animal-pics/megaterio-fosil.jpeg", "res://assets/sprites/animal-pics/megaterio-animal.jpeg")
+var dientesDeSable = crearAnimal("Tigre Diente de Sable", "res://assets/sprites/powerups/dientes-de-sable/", "res://assets/sprites/animals/oldAnimals/dientes-de-sable-fosil.png", "res://assets/sprites/animals/oldAnimals/dientes-de-sable-animal.png")
+var aveDelTerror = crearAnimal("Ave del Terror", "res://assets/sprites/powerups/ave-del-terror/", "res://assets/sprites/animals/oldAnimals/ave-del-terror-fosil.png", "res://assets/sprites/animals/oldAnimals/ave-del-terror-animal.png")
+var toxodonte = crearAnimal("Toxodonte", "res://assets/sprites/powerups/toxodonte/", "res://assets/sprites/animals/oldAnimals/toxodonte-fosil.png", "res://assets/sprites/animals/oldAnimals/toxodonte-animal.png")
+var gliptodonte = crearAnimal("Gliptodonte", "res://assets/sprites/powerups/gliptodonte/", "res://assets/sprites/animals/oldAnimals/gliptodonte-fosil.png", "res://assets/sprites/animals/oldAnimals/gliptodonte-animal.png")
+var megaterio = crearAnimal("Megaterio", "res://assets/sprites/powerups/megaterio/", "res://assets/sprites/animals/oldAnimals/megaterio-fosil.png", "res://assets/sprites/animals/oldAnimals/megaterio-animal.png")
 
 # Crear la lista de niveles    dientesDeSable
 var levels = [
-    Level.new("Frías I", dientesDeSable, 3, "dia"),
-    Level.new("Luján", aveDelTerror, 3, "dia"),
-    Level.new("Paso del Cañón", toxodonte, 3, "dia"),
-    Level.new("Archaval", gliptodonte, 3,"dia"),
-    Level.new("Diaz", megaterio, 3, "dia"),
-    Level.new("Frías II", megaterio, 3, "dia"),
-    Level.new("Frías III", aveDelTerror, 3, "dia")
+    Level.new("Frías I", dientesDeSable, 1, "dia", false),
+    Level.new("Luján", aveDelTerror, 1, "dia", false),
+    Level.new("Paso del Cañón", toxodonte, 1, "dia", false),
+    Level.new("Archaval", gliptodonte, 1,"dia", false),
+    Level.new("Diaz", megaterio, 1, "dia", false),
+    Level.new("Frías II", megaterio, 1, "dia", true),
+    Level.new("Frías III", aveDelTerror, 1, "dia", false)
 ]
 
 var current_level_id = 0
