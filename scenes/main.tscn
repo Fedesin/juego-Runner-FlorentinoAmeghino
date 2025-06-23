@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://4lst6lqjreur" path="res://assets/sprites/backgrounds/cutscene/background_shadow.png" id="25_h1dbg"]
 [ext_resource type="Texture2D" uid="uid://mrmvmkav2m77" path="res://assets/sprites/backgrounds/cutscene/background.png" id="25_la0mv"]
 [ext_resource type="Texture2D" uid="uid://bmqn8omsmppv" path="res://assets/sprites/animal-pics/florentino-ameghino.png" id="27_j4xh1"]
-[ext_resource type="Texture2D" uid="uid://bhkig6ayohwrk" path="res://assets/sprites/animals/oldAnimals/dientes-de-sable-fosil.png" id="28_5s638"]
+[ext_resource type="Texture2D" uid="uid://myqo3o1ibxqn" path="res://assets/sprites/animals/oldAnimals/dientes-de-sable-fosil.png" id="28_5s638"]
 [ext_resource type="Texture2D" uid="uid://h0joaplmoajq" path="res://assets/sprites/backgrounds/damage.png" id="31_k5167"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ogxin"]

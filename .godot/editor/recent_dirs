@@ -1,13 +1,14 @@
-res://assets/sprites/animals/oldAnimals
 res://scenes
+res://assets/sprites/backgrounds
+res://assets/sprites/animals/newAnimals
+res://assets/sprites/animals/oldAnimals
+res://scripts
 res://assets/sprites/cats
 res://assets/sprites/backgrounds/dia
 res://assets/sprites/npc
 res://scenes/npc
-res://scripts
 res://scenes/ui
 res://scenes/cats
-res://assets/sprites/backgrounds
 res://scenes/objects
 res://assets/fonts/pixel-digivolve-font
 res://assets/fonts/pixel-cowboy-font
@@ -19,5 +20,4 @@ res://assets/fonts/typeface-mario-world-pixel-font
 res://assets/sprites/background
 res://assets/sprites/animal-pics
 res://assets/sprites/backgrounds/cutscene
-res://assets/sprites/obstacles
 /home/kmonti/Desktop/Kevin/Game Design/juego-Runner-FlorentinoAmeghino

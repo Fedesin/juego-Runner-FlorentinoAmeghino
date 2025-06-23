@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://csgcparkr63bj"]
+[gd_scene load_steps=6 format=3 uid="uid://csgcparkr63bj"]
 
 [ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_beth1"]
-[ext_resource type="Texture2D" uid="uid://cx7oyl7m5p1vq" path="res://assets/sprites/animal-pics/ave-del-terror.jpg" id="1_oicbc"]
 [ext_resource type="Texture2D" uid="uid://mrmvmkav2m77" path="res://assets/sprites/backgrounds/cutscene/background.png" id="2_3ie6p"]
 [ext_resource type="Shader" path="res://scenes/pixelate.gdshader" id="2_f3h6d"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="3_bmqhf"]
-[ext_resource type="Texture2D" uid="uid://062j862cp46b" path="res://assets/sprites/animal-pics/florencioFace2.png" id="4_p6f7c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_guewj"]
 shader = ExtResource("2_f3h6d")
@@ -18,7 +16,6 @@ script = ExtResource("1_beth1")
 material = SubResource("ShaderMaterial_guewj")
 position = Vector2(585, 300)
 scale = Vector2(0.332, 0.332)
-texture = ExtResource("1_oicbc")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -43,4 +40,3 @@ metadata/_edit_use_anchors_ = true
 [node name="Florencio" type="Sprite2D" parent="."]
 position = Vector2(119.781, 507.696)
 scale = Vector2(2.24437, 2.24437)
-texture = ExtResource("4_p6f7c")

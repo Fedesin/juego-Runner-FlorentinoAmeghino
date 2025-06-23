@@ -1,0 +1,187 @@
+[gd_scene load_steps=21 format=3 uid="uid://bckyqhsvnsdmm"]
+
+[ext_resource type="Script" path="res://scripts/CreditsScript.gd" id="1_4dr5i"]
+[ext_resource type="Texture2D" uid="uid://db7ycauo8thwo" path="res://assets/sprites/backgrounds/credits_background.png" id="2_avee6"]
+[ext_resource type="Texture2D" uid="uid://bt2xysge618pn" path="res://assets/sprites/animals/oldAnimals/ave-del-terror-animal.png" id="3_fn2d2"]
+[ext_resource type="Shader" path="res://scenes/card_shadow.gdshader" id="4_2bn11"]
+[ext_resource type="Texture2D" uid="uid://yiiaqda86oac" path="res://assets/sprites/animals/newAnimals/Cariama_cristata.jpg" id="4_wrh8c"]
+[ext_resource type="Texture2D" uid="uid://cmqnxp3qdc7kw" path="res://assets/sprites/animals/oldAnimals/dientes-de-sable-animal.png" id="5_kdkiq"]
+[ext_resource type="Texture2D" uid="uid://bf2t2a1gsiqun" path="res://assets/sprites/animals/newAnimals/animal-world-3193850_1280.jpg" id="6_3wsa0"]
+[ext_resource type="Texture2D" uid="uid://b0iwtsx8sfh6d" path="res://assets/sprites/animals/oldAnimals/toxodonte-animal.png" id="7_34fm5"]
+[ext_resource type="Texture2D" uid="uid://khi2cn8efxd3" path="res://assets/sprites/animals/newAnimals/hippopotamus-2780699_1280.webp" id="8_emxwg"]
+[ext_resource type="Texture2D" uid="uid://cqvrimhkgboi4" path="res://assets/sprites/animals/oldAnimals/gliptodonte-animal.png" id="9_hlb72"]
+[ext_resource type="Texture2D" uid="uid://ber24n6h17f0v" path="res://assets/sprites/animals/newAnimals/armadillo-360123_1280.jpg" id="10_1nxh3"]
+[ext_resource type="Texture2D" uid="uid://bc5c8biwmqcui" path="res://assets/sprites/animals/oldAnimals/megaterio-animal2.jpg" id="11_3h881"]
+[ext_resource type="Texture2D" uid="uid://nfs1ma553cjh" path="res://assets/sprites/animals/newAnimals/sloth-9504650_1280.webp" id="12_s7opb"]
+[ext_resource type="Texture2D" uid="uid://bjvjt2lom2ihn" path="res://assets/sprites/backgrounds/credits_sign.png" id="13_o20pe"]
+[ext_resource type="Shader" path="res://scenes/shine.gdshader" id="14_sg6a0"]
+[ext_resource type="FontFile" uid="uid://ct8lvmg7vylbs" path="res://assets/fonts/typeface-mario-world-pixel-font/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="15_g6d66"]
+[ext_resource type="FontFile" uid="uid://kqw56ndy08bq" path="res://assets/fonts/pixel-cowboy-font/PixelCowboy-l7we.ttf" id="16_tust3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5c6a"]
+shader = ExtResource("4_2bn11")
+shader_parameter/shadow_offset = Vector2(10, 10)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hffci"]
+shader = ExtResource("14_sg6a0")
+shader_parameter/size_effect = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+shader_parameter/pause_duration = 0.5
+shader_parameter/texture_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5gyas"]
+shader = ExtResource("14_sg6a0")
+shader_parameter/size_effect = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+shader_parameter/pause_duration = 0.5
+shader_parameter/texture_size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4dr5i")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -8
+position = Vector2(576, 648)
+scale = Vector2(6, 6)
+texture = ExtResource("2_avee6")
+
+[node name="Photos" type="Node2D" parent="."]
+
+[node name="PhotoA1" type="Sprite2D" parent="Photos"]
+z_index = 2
+position = Vector2(-194, 365)
+scale = Vector2(0.184844, 0.184844)
+texture = ExtResource("3_fn2d2")
+
+[node name="PhotoB1" type="Sprite2D" parent="Photos"]
+z_index = 2
+position = Vector2(1359, 409)
+scale = Vector2(0.756217, 0.756217)
+texture = ExtResource("4_wrh8c")
+
+[node name="PhotoA2" type="Sprite2D" parent="Photos"]
+z_index = 4
+position = Vector2(-182, 724)
+scale = Vector2(0.184844, 0.184844)
+texture = ExtResource("5_kdkiq")
+
+[node name="PhotoB2" type="Sprite2D" parent="Photos"]
+z_index = 4
+position = Vector2(1423, 726)
+scale = Vector2(0.296045, 0.296045)
+texture = ExtResource("6_3wsa0")
+
+[node name="PhotoA3" type="Sprite2D" parent="Photos"]
+z_index = 6
+position = Vector2(-177, 1047)
+scale = Vector2(0.184844, 0.184844)
+texture = ExtResource("7_34fm5")
+
+[node name="PhotoB3" type="Sprite2D" parent="Photos"]
+z_index = 6
+position = Vector2(1423, 1009)
+scale = Vector2(0.296045, 0.296045)
+texture = ExtResource("8_emxwg")
+
+[node name="PhotoA4" type="Sprite2D" parent="Photos"]
+z_index = 8
+position = Vector2(-177, 1380)
+scale = Vector2(0.184844, 0.184844)
+texture = ExtResource("9_hlb72")
+
+[node name="PhotoB4" type="Sprite2D" parent="Photos"]
+z_index = 8
+position = Vector2(1408, 1316)
+scale = Vector2(0.296045, 0.296045)
+texture = ExtResource("10_1nxh3")
+
+[node name="PhotoA5" type="Sprite2D" parent="Photos"]
+z_index = 10
+position = Vector2(-183, 1689)
+scale = Vector2(0.372632, 0.372632)
+texture = ExtResource("11_3h881")
+
+[node name="PhotoB5" type="Sprite2D" parent="Photos"]
+z_index = 10
+position = Vector2(1408, 1673)
+scale = Vector2(0.296045, 0.296045)
+texture = ExtResource("12_s7opb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="CartelFlorentino" type="Node2D" parent="."]
+z_index = 11
+position = Vector2(575, -280)
+
+[node name="SombraCartel" type="Sprite2D" parent="CartelFlorentino"]
+material = SubResource("ShaderMaterial_s5c6a")
+position = Vector2(-53, -27.69)
+scale = Vector2(5.18519, 5.18519)
+texture = ExtResource("13_o20pe")
+
+[node name="Cartel" type="Sprite2D" parent="CartelFlorentino"]
+position = Vector2(0, 0.309998)
+scale = Vector2(5.18519, 5.18519)
+texture = ExtResource("13_o20pe")
+
+[node name="Title2" type="RichTextLabel" parent="CartelFlorentino"]
+material = SubResource("ShaderMaterial_hffci")
+offset_left = -322.0
+offset_top = -43.4689
+offset_right = 532.0
+offset_bottom = 97.5311
+rotation = -0.0882452
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/normal_font = ExtResource("15_g6d66")
+theme_override_font_sizes/normal_font_size = 63
+bbcode_enabled = true
+text = "[center]Ameghino[/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Title1" type="RichTextLabel" parent="CartelFlorentino"]
+material = SubResource("ShaderMaterial_5gyas")
+offset_left = -460.0
+offset_top = -114.469
+offset_right = 394.0
+offset_bottom = 20.5311
+rotation = -0.0705751
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/normal_font = ExtResource("15_g6d66")
+theme_override_font_sizes/normal_font_size = 61
+bbcode_enabled = true
+text = "[center]Florentino [/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Subtitle" type="RichTextLabel" parent="CartelFlorentino"]
+offset_left = -327.0
+offset_top = 48.5311
+offset_right = 349.0
+offset_bottom = 115.531
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/normal_font = ExtResource("16_tust3")
+theme_override_font_sizes/normal_font_size = 53
+bbcode_enabled = true
+text = "[center]¡Descubriendo Fósiles![/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
