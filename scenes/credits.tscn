@@ -48,7 +48,13 @@ script = ExtResource("1_4dr5i")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -8
-position = Vector2(576, 648)
+position = Vector2(576, 2592)
+scale = Vector2(6, 6)
+texture = ExtResource("2_avee6")
+
+[node name="Background2" type="Sprite2D" parent="."]
+z_index = -8
+position = Vector2(576, 7776)
 scale = Vector2(6, 6)
 texture = ExtResource("2_avee6")
 
@@ -182,6 +188,12 @@ text = "[center]¡Descubriendo Fósiles![/center]"
 metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_top = 651.0
+offset_right = 1152.0
+offset_bottom = 1803.0

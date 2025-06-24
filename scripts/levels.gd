@@ -15,13 +15,14 @@ var megaterio = crearAnimal("Megaterio", "res://assets/sprites/powerups/megateri
 
 # Crear la lista de niveles    dientesDeSable
 var levels = [
-    Level.new("Frías I", dientesDeSable, 1, "dia", false),
-    Level.new("Luján", aveDelTerror, 1, "dia", false),
-    Level.new("Paso del Cañón", toxodonte, 1, "dia", false),
-    Level.new("Archaval", gliptodonte, 1,"dia", false),
-    Level.new("Diaz", megaterio, 1, "dia", false),
-    Level.new("Frías II", megaterio, 1, "dia", true),
-    Level.new("Frías III", aveDelTerror, 1, "dia", false)
+    Level.new("Frías I", dientesDeSable, 3, "dia", false),
+    Level.new("Luján", aveDelTerror, 3, "dia", false),
+    Level.new("Paso del Cañón", toxodonte, 3, "dia", false),
+    Level.new("Archaval", gliptodonte, 4,"dia", false),
+    Level.new("Diaz", megaterio, 4, "dia", false),
+    Level.new("Frías II", megaterio, 5, "dia", true),
+    Level.new("Frías III", aveDelTerror, 5, "dia", false),
+    Level.new("<FIN>", null, 0, "", false)
 ]
 
 var current_level_id = 0

@@ -1,4 +1,4 @@
-res://scenes/credits.tscn
+res://scenes/intro.tscn
 res://scenes/card_shadow.gdshader
 res://scripts/player.gd
 res://scenes/damage.gdshader
@@ -7,8 +7,8 @@ res://scenes/pixelate.gdshader
 res://scenes/circle.gdshader
 res://scenes/objects/blur.gdshader
 res://scenes/label1.gdshader
-res://scripts/CreditsScript.gd
-res://scenes/intro.tscn
-res://scenes/background.tscn
-res://scenes/cutscene.tscn
+res://scenes/credits.tscn
 res://scenes/main.tscn
+res://scripts/CreditsScript.gd
+res://scripts/levels.gd
+res://scripts/main.gd

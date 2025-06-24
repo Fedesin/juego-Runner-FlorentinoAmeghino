@@ -1,6 +1,8 @@
-# CRÉDITOS — JUEGO FLORENTINO
+# CREDITOS
 
-## COORDINACIÓN
+
+
+## COORDINACION
 - Lic. Mariela Cogo
   Departamento de Educación
 - Lic. Yoana Gimenez
@@ -8,55 +10,85 @@
 - Dra. Cristina Luchetti
   Departamento de Sociales
 
-## PRODUCCIÓN — DESARROLLO DEL VIDEOJUEGO
+
+
+
+## PRODUCCION / DESARROLLO DEL VIDEOJUEGO
 - Kevin Monti
   Facilitador del CIDETIC
 - Federico Simone
   Facilitador del CIDETIC
+Codigo basado en el proyecto RUN FOR IT, Copyright (c) 2023 Joshua Najera
 
-## EQUIPO TÉCNICO
-- **Guión:** Estudiantes del Grupo A3 del CEC N.º 801 — Año 2024
-- **Dibujo de personaje:** Iker Castillo
-- **Dibujo del escenario:** Francesca Morici Palomequi
-- **Docente:** Jaquelina Olmedo
 
-## DISEÑO GRÁFICO
+
+
+## EQUIPO TECNICO
+- Guion: Estudiantes del Grupo A3 del CEC Nro. 801 / Año 2024
+- Dibujo de personaje: Iker Castillo
+- Dibujo del escenario: Francesca Morici Palomequi
+- Docente: Jaquelina Olmedo
+
+
+<res://assets/sprites/photos/photo1.jpeg>
+
+
+<res://assets/sprites/photos/photo2.jpeg>
+
+
+## DISENO GRAFICO / PIXEL ART
 - Kevin Monti
   Facilitador del CIDETIC
 
+
+
+
 ## AGRADECIMIENTOS
-- Centro Educativo Complementario N.º 801
-  Villa de Luján — Luján — Buenos Aires
-  - **Directora:** Lic. Lorena Beherán
+- Centro Educativo Complementario Nro. 801
+  Villa de Lujan — Lujan — Buenos Aires
+  - Directora: Lic. Lorena Beheran
+
+
+
 
 ## EXPERTOS
 - Juan Carlos Fernicola
-  Investigador Principal del CONICET — Doctor en Ciencias Biológicas
+  Investigador Principal del CONICET, Doctor en Ciencias Biologicas
 - Sonia Lanzeloti
-  Investigadora Adjunta del CONICET — Doctora en Arqueología
-- Prof. Emérito Claudio Tuis
+  Investigadora Adjunta del CONICET, Doctora en Arqueologia
+- Claudio Tuis
+  Prof. Extraordinario Consulto
 - Mg. Guillermo Cherencio
   Director del CIDETIC
 
-## UNIVERSIDAD NACIONAL DE LUJÁN
+
+
+
+## UNIVERSIDAD NACIONAL DE LUJAN
 - Departamentos de Educación y Sociales
 - Acción de extensión “El río nos une. Patrimonio natural e histórico”.
 
-## FOTOGRAFÍA
-- **Armadillo en Nayarit:** JaguarXtreme2019 (Wikimedia Commons)
-- **Cariama cristata:** Whaldener Endo (Wikimedia Commons)
-- **Hippopotamus:** Ralphs_Fotos (Pixabay)
-- **Perezoso de garganta marrón:** Veronika Andrews (Pixabay)
-- **Jaguar:** NetzwerX (Pixabay)
-- **Glyptodon asper:** WolfmanSF (Wikimedia Commons)
-- **Glyptodon:** Pavel.Riha.CB (Wikimedia Commons)
-- **Toxodon:** ArthurWeasley (Wikimedia Commons)
-- **Pleistocene SA:** DiBgd (Wikimedia Commons)
-- **Megatherium americanum Skeleton NHM:** Ballista (Wikimedia Commons)
-- **Phorusrhacos longissimus (cráneo):** Captmondo (Wikimedia Commons)
-- **Phorusrhacos longissimus (reconstrucción):** ДиБгд (Wikimedia Commons)
-- **Climbing Smilodon:** stu_spivack (Wikimedia Commons)
-- **Smilodon:** Dmitry Bogdanov (Wikimedia Commons)
 
-## LUJÁN, 2024 – 2025
+<res://assets/sprites/logos/logo-unlu.png>
 
+
+## FOTOGRAFIA
+- Armadillo en Nayarit: JaguarXtreme2019 (Wikimedia Commons)
+- Cariama cristata: Whaldener Endo (Wikimedia Commons)
+- Hippopotamus: Ralphs_Fotos (Pixabay)
+- Perezoso de garganta marrón: Veronika Andrews (Pixabay)
+- Jaguar: NetzwerX (Pixabay)
+- Glyptodon asper: WolfmanSF (Wikimedia Commons)
+- Glyptodon: Pavel.Riha.CB (Wikimedia Commons)
+- Toxodon: ArthurWeasley (Wikimedia Commons)
+- Pleistocene SA: DiBgd (Wikimedia Commons)
+- Megatherium americanum Skeleton NHM: Ballista (Wikimedia Commons)
+- Phorusrhacos longissimus (cráneo): Captmondo (Wikimedia Commons)
+- Phorusrhacos longissimus (reconstrucción): ДиБгд (Wikimedia Commons)
+- Climbing Smilodon: stu_spivack (Wikimedia Commons)
+- Smilodon: Dmitry Bogdanov (Wikimedia Commons)
+
+
+
+
+## LUJAN, 2024 – 2025

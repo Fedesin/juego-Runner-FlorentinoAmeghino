@@ -67,6 +67,7 @@ signal start_game
 signal game_end
 
 var fosil_scene = load("res://scenes/cutscene.tscn")
+var credits_scene = preload("res://scenes/credits.tscn")
 
 var initial_shadow_y = 0
 
@@ -189,7 +190,13 @@ func new_game() -> void:
   $RunningMusic/AnimationPlayer.play("ost_fade_in")
   var tween = get_tree().create_tween()
   tween.tween_property($HUD/TitleLabel, "modulate:a", 1, 0)
-  $HUD/TitleLabel.text = levels.get_level().get_title()
+  var level_title = levels.get_level().get_title()
+  
+  if level_title == "<FIN>" :
+    get_tree().change_scene_to_packed(credits_scene)
+    
+  $HUD/TitleLabel.text = level_title
+
   change_background()
   if getCurrentLevel().companion:
     add_megaterio()
