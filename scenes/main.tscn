@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c46u56kn4ir4y"]
+[gd_scene load_steps=40 format=3 uid="uid://c46u56kn4ir4y"]
 
 [ext_resource type="PackedScene" uid="uid://ce4x3xa1n7wsx" path="res://scenes/background.tscn" id="1_6icab"]
 [ext_resource type="PackedScene" uid="uid://c6kuvrcrxl2sr" path="res://scenes/ground.tscn" id="1_7x73t"]
@@ -12,22 +12,26 @@
 [ext_resource type="PackedScene" uid="uid://b2ygwns5dr211" path="res://scenes/ui/hud.tscn" id="5_mo7pu"]
 [ext_resource type="PackedScene" uid="uid://dnbk8hwdwvkd7" path="res://scenes/cats/white_cat.tscn" id="6_wosea"]
 [ext_resource type="PackedScene" uid="uid://dtasl0kw0cfjo" path="res://scenes/npc/megaterio.tscn" id="7_7nnaf"]
-[ext_resource type="PackedScene" uid="uid://c0waeo1kbmicg" path="res://scenes/ui/running_music.tscn" id="8_i004v"]
 [ext_resource type="PackedScene" uid="uid://dwccscvhgbkaj" path="res://scenes/cats/pink_cat.tscn" id="9_0rni0"]
 [ext_resource type="PackedScene" uid="uid://bqugp4dysqfuk" path="res://scenes/objects/bookshelf.tscn" id="10_2vmp8"]
 [ext_resource type="PackedScene" uid="uid://inor2v8tc0hs" path="res://scenes/ui/game_over.tscn" id="10_4c20w"]
 [ext_resource type="PackedScene" uid="uid://so22h6q30vhj" path="res://scenes/objects/chair.tscn" id="11_uxcue"]
 [ext_resource type="PackedScene" uid="uid://cmoxx3oim36xs" path="res://scenes/objects/coin.tscn" id="12_lcvrn"]
 [ext_resource type="PackedScene" uid="uid://w3a6bldv8nuf" path="res://scenes/objects/fridge.tscn" id="13_7dtbu"]
+[ext_resource type="Texture2D" uid="uid://bs0ytkammbbq7" path="res://assets/sprites/backgrounds/dia/layer1.png" id="15_jd31g"]
 [ext_resource type="Texture2D" uid="uid://crdrtsdoo61s1" path="res://assets/sprites/backgrounds/dia/ground.png" id="16_5b566"]
 [ext_resource type="Shader" path="res://scenes/damage.gdshader" id="17_f7cwu"]
 [ext_resource type="FontFile" uid="uid://kqw56ndy08bq" path="res://assets/fonts/pixel-cowboy-font/PixelCowboy-l7we.ttf" id="18_0uq70"]
 [ext_resource type="Texture2D" uid="uid://cnrtt2phaubmn" path="res://assets/sprites/cats/shadow.png" id="19_8hq3d"]
 [ext_resource type="FontFile" uid="uid://uqao480wegj4" path="res://assets/fonts/pixel-digivolve-font/PixelDigivolve-mOm9.ttf" id="19_ete86"]
 [ext_resource type="PackedScene" uid="uid://xmcamt5xtmet" path="res://scenes/ui/menu.tscn" id="20_ym1el"]
+[ext_resource type="AudioStream" uid="uid://cbtmum41u1qbb" path="res://assets/audio/sfx/sound_effects/1up/WAV/1up1.wav" id="21_dxnt7"]
+[ext_resource type="AudioStream" uid="uid://c2vmo8kh7kwn3" path="res://assets/audio/music/flowerbed_fields.wav" id="21_jm5g6"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="21_ugs5p"]
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="22_ajwdw"]
+[ext_resource type="AudioStream" uid="uid://6v3kwd2wgwwu" path="res://assets/audio/sfx/sound_effects/Explosions/WAV/Explosion2.wav" id="23_cxihe"]
 [ext_resource type="Shader" path="res://scenes/pixelate.gdshader" id="23_lgwg7"]
+[ext_resource type="Texture2D" uid="uid://cbf05vetdhlmk" path="res://assets/sprites/backgrounds/black-gradient.png" id="24_rapbn"]
 [ext_resource type="Texture2D" uid="uid://4lst6lqjreur" path="res://assets/sprites/backgrounds/cutscene/background_shadow.png" id="25_h1dbg"]
 [ext_resource type="Texture2D" uid="uid://mrmvmkav2m77" path="res://assets/sprites/backgrounds/cutscene/background.png" id="25_la0mv"]
 [ext_resource type="Texture2D" uid="uid://bmqn8omsmppv" path="res://assets/sprites/animal-pics/florentino-ameghino.png" id="27_j4xh1"]
@@ -57,6 +61,14 @@ metadata/_edit_horizontal_guides_ = [-18456.0]
 
 [node name="Background" parent="." instance=ExtResource("1_6icab")]
 
+[node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxLayer" index="2"]
+modulate = Color(0, 0.0666667, 0.45098, 0.454902)
+z_index = -1
+position = Vector2(-13, 8)
+scale = Vector2(0.412561, 0.412561)
+texture = ExtResource("15_jd31g")
+centered = false
+
 [node name="Ground" parent="." instance=ExtResource("1_7x73t")]
 
 [node name="Sprite2D" parent="Ground" index="0"]
@@ -74,6 +86,12 @@ autoplay = ""
 [node name="CollisionShape2D" parent="Player" index="1"]
 position = Vector2(-0.5, -0.5)
 
+[node name="JumpSound" parent="Player" index="2"]
+volume_db = 2.137
+
+[node name="HitSound" parent="Player" index="3"]
+volume_db = 10.792
+
 [node name="Shadow" type="Sprite2D" parent="Player"]
 modulate = Color(1, 1, 1, 0.521569)
 position = Vector2(9.53674e-07, 42)
@@ -82,6 +100,29 @@ texture = ExtResource("19_8hq3d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="Cutscene_sound1" type="AudioStreamPlayer2D" parent="Camera2D"]
+stream = ExtResource("21_dxnt7")
+volume_db = 22.415
+bus = &"SFX"
+
+[node name="Cutscene_sound2" type="AudioStreamPlayer2D" parent="Camera2D"]
+stream = ExtResource("23_cxihe")
+volume_db = 19.366
+
+[node name="RunningMusic" type="AudioStreamPlayer2D" parent="Camera2D"]
+stream = ExtResource("21_jm5g6")
+volume_db = 21.848
+bus = &"Music"
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+modulate = Color(1, 1, 1, 0.368627)
+self_modulate = Color(0.184314, 0.635294, 0.898039, 1)
+z_index = -2
+position = Vector2(-1, 174)
+rotation = -3.14159
+scale = Vector2(0.600097, 0.600097)
+texture = ExtResource("24_rapbn")
 
 [node name="HUD" parent="." instance=ExtResource("5_mo7pu")]
 
@@ -131,8 +172,6 @@ horizontal_alignment = 1
 [node name="GameOver" parent="." node_paths=PackedStringArray("main") instance=ExtResource("10_4c20w")]
 visible = false
 main = NodePath("..")
-
-[node name="RunningMusic" parent="." instance=ExtResource("8_i004v")]
 
 [node name="Menu" parent="." instance=ExtResource("20_ym1el")]
 visible = false
@@ -212,16 +251,26 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Florencio" type="Sprite2D" parent="Cutscene"]
-position = Vector2(110, 604)
+z_index = 2
+position = Vector2(110, 605)
+scale = Vector2(0.962656, 0.962656)
+texture = ExtResource("27_j4xh1")
+
+[node name="Florencio" type="Sprite2D" parent="Cutscene/Florencio"]
+modulate = Color(0, 0, 0, 0.662745)
+z_as_relative = false
+position = Vector2(-20.7759, 3.11631)
 scale = Vector2(0.962656, 0.962656)
 texture = ExtResource("27_j4xh1")
 
 [node name="Overlay" type="ColorRect" parent="Cutscene"]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
 [node name="DamageFrame" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(576, 324)
 scale = Vector2(6, 6)
 texture = ExtResource("31_k5167")

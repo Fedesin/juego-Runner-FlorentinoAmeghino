@@ -12,7 +12,7 @@ func _ready():
     $Label2.modulate.a = 0.0
     pass
     
-func playCutscene(animal: Animal):
+func playCutscene(animal: Animal, sound: AudioStreamPlayer2D):
     var main = get_parent()
     main.cutscene_playing = true
     $AnimalName.modulate.a = 0.0
@@ -21,16 +21,15 @@ func playCutscene(animal: Animal):
     var animalNameText = "[center][shake rate=15.0 level=5 connected=1]" + animal.name + "[/shake][/center]"
     $AnimalName.text = animalNameText
     
-    print(animal.name)
     var photo_texture = load(animal.pathFosilPhoto)
     $Photo.texture = photo_texture
     transicion()
     florencioAnimation()
     await get_tree().create_timer(0.4).timeout
-    animalAnimation(animal)
+    animalAnimation(animal, sound)
     await get_tree().create_timer(6.4).timeout
 
-func animalNameAnimation():
+func animalNameAnimation(sound: AudioStreamPlayer2D):
     var tween = get_tree().create_tween()
     
     # Centrar el pivote para que la escala sea uniforme
@@ -45,6 +44,8 @@ func animalNameAnimation():
     # Suavizado con efecto rebote
     tween.set_trans(Tween.TRANS_CUBIC)
     tween.set_ease(Tween.EASE_OUT)
+    await get_tree().create_timer(1.3).timeout
+    sound.play()
 
 func pressSpaceAnimation():
     while skip:
@@ -59,14 +60,14 @@ func pressSpaceAnimation():
         tween2.set_ease(Tween.EASE_OUT)  # Disminuye rápido al inicio y luego más lento
         await get_tree().create_timer(0.8).timeout
 
-func animalAnimation(animal: Animal):
+func animalAnimation(animal: Animal, sound: AudioStreamPlayer2D):
     var tween = get_tree().create_tween()
     tween.tween_property(mater, "shader_parameter/amount", 0.0, 1.4)  # Cambia `amount` a 0 en 2 segundos
     tween.set_trans(Tween.TRANS_CUBIC)  # Hace la animación más suave
     tween.set_ease(Tween.EASE_OUT)  # Disminuye rápido al inicio y luego más lento
     
     await get_tree().create_timer(1.4).timeout
-    animalNameAnimation()
+    animalNameAnimation(sound)
     await get_tree().create_timer(2.6).timeout
     
     

@@ -75,6 +75,11 @@ var initial_shadow_y = 0
 var megaterio_companion: Megaterio
 
 func _ready() -> void:
+  #$Camera2D/RunningMusic.volume_db = 6
+  $DamageFrame.visible = true
+
+  $Camera2D/RunningMusic.play()
+
   initial_shadow_y = $Player.global_position.y + 40
   screen_size = get_viewport().size
   ground_height = $Ground/Sprite2D.texture.get_height()
@@ -88,7 +93,8 @@ func playCutscene():
     pausa = true
     speed = 0
     $Cutscene.visible = true
-    $Cutscene.playCutscene(getCurrentLevel().get_animal())
+    $Camera2D/Cutscene_sound1.play()
+    $Cutscene.playCutscene(getCurrentLevel().get_animal(), $Camera2D/Cutscene_sound2)
     #speed = previousSpeed
 
 func getCurrentLevel() -> Level:
@@ -186,8 +192,8 @@ func new_game() -> void:
   # Reset HUD
   $HUD/StartLabel.show()
   $GameOver.hide()
-  $RunningMusic.play()
-  $RunningMusic/AnimationPlayer.play("ost_fade_in")
+  #$RunningMusic.play()
+  #$RunningMusic/AnimationPlayer.play("ost_fade_in")
   var tween = get_tree().create_tween()
   tween.tween_property($HUD/TitleLabel, "modulate:a", 1, 0)
   var level_title = levels.get_level().get_title()
@@ -223,7 +229,6 @@ func check_high_score() -> void:
   if score > high_score:
     high_score = score
     $HUD/HighScoreLabel.text = "HIGHSCORE: " + str(high_score / SCORE_MODIFIER)
-
 
 func generate_item() -> void:
   if not items_spawned.is_empty():
@@ -276,7 +281,7 @@ func adjust_difficulty() -> void:
 func end_game() -> void:
   get_tree().paused = true
   game_running = false
-  $RunningMusic/AnimationPlayer.play("ost_fade_out")
+  #$RunningMusic/AnimationPlayer.play("ost_fade_out")
 
   # Calculate how much player gets from just running
   var final_score: int = score / SCORE_MODIFIER / 5

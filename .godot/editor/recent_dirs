@@ -1,22 +1,22 @@
+res://assets/audio/sfx/megaterio
 /home/kmonti/Desktop/Kevin/Game Design/juego-Runner-FlorentinoAmeghino/scripts
+res://scenes/npc
+res://scenes/objects
+res://assets/audio/sfx/sound_effects/Explosions/OGG
+res://assets/audio/music
 res://scenes
+res://assets/audio/sfx/sound_effects/Explosions/WAV
+res://assets/audio/sfx/sound_effects/1up/WAV
+res://assets/audio/sfx/misc/Paper pack
+res://assets/audio/sfx
+res://scenes/ui
+res://assets/audio/sfx/sound_effects/Hit/WAV
+res://assets/sprites/npc
 res://assets/sprites/backgrounds
 res://assets/sprites/animals/newAnimals
 res://assets/sprites/animals/oldAnimals
 res://scripts
 res://assets/sprites/cats
 res://assets/sprites/backgrounds/dia
-res://assets/sprites/npc
-res://scenes/npc
-res://scenes/ui
 res://scenes/cats
-res://scenes/objects
 res://assets/fonts/pixel-digivolve-font
-res://assets/fonts/pixel-cowboy-font
-res://assets/fonts
-res://assets/sprites/powerups/gliptodonte
-res://assets/sprites/powerups/megaterio
-res://scripts/misc
-res://assets/fonts/typeface-mario-world-pixel-font
-res://assets/sprites/background
-res://assets/sprites/animal-pics

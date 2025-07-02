@@ -1,13 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtasl0kw0cfjo"]
+[gd_scene load_steps=17 format=3 uid="uid://dtasl0kw0cfjo"]
 
 [ext_resource type="Script" path="res://scripts/megaterio.gd" id="1_8xceh"]
 [ext_resource type="Texture2D" uid="uid://cnrtt2phaubmn" path="res://assets/sprites/cats/shadow.png" id="2_3ggj7"]
 [ext_resource type="Texture2D" uid="uid://pubh4fhrff03" path="res://assets/sprites/npc/megaterio-idle.png" id="2_do63r"]
 [ext_resource type="Texture2D" uid="uid://kvdsvinx0ghn" path="res://assets/sprites/npc/megaterio.png" id="3_q331g"]
-[ext_resource type="AudioStream" uid="uid://d2410xg1k008c" path="res://assets/audio/sfx/cats/meow1.mp3" id="4_r4jj4"]
-[ext_resource type="AudioStream" uid="uid://dkhfnceraa8pb" path="res://assets/audio/sfx/cats/meow2.mp3" id="5_ai0tx"]
-[ext_resource type="AudioStream" uid="uid://bta0xsj2av7ef" path="res://assets/audio/sfx/cats/meow3.mp3" id="6_agmol"]
-[ext_resource type="AudioStream" uid="uid://b046peum241gb" path="res://assets/audio/sfx/cats/meow4.mp3" id="7_n73cm"]
+[ext_resource type="AudioStream" uid="uid://ckodx5ckl3rs3" path="res://assets/audio/sfx/megaterio/fantasy_desert_camel.mp3" id="5_hjayu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ic348"]
 atlas = ExtResource("2_do63r")
@@ -87,17 +84,11 @@ animations = [{
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tvk47"]
 playback_mode = 1
-random_pitch = 1.5
+random_pitch = 1.3
 random_volume_offset_db = 1.0
-streams_count = 4
-stream_0/stream = ExtResource("4_r4jj4")
+streams_count = 1
+stream_0/stream = ExtResource("5_hjayu")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("5_ai0tx")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("6_agmol")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("7_n73cm")
-stream_3/weight = 1.0
 
 [node name="Megaterio" type="Node2D"]
 position = Vector2(0, -31)
@@ -113,16 +104,16 @@ texture = ExtResource("2_3ggj7")
 position = Vector2(1, -32)
 scale = Vector2(4.17857, 4.17857)
 sprite_frames = SubResource("SpriteFrames_dnufc")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="MeowSound" type="AudioStreamPlayer2D" parent="."]
+[node name="RoarSound" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = SubResource("AudioStreamRandomizer_tvk47")
-volume_db = -15.0
+volume_db = 16.183
 max_distance = 1000.0
 bus = &"SFX"
 

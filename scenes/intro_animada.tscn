@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://dv8lqhyw1hrq2"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_wibsk"]
+[ext_resource type="PackedScene" uid="uid://ce4x3xa1n7wsx" path="res://scenes/background.tscn" id="2_if6go"]
+[ext_resource type="Texture2D" uid="uid://bs0ytkammbbq7" path="res://assets/sprites/backgrounds/dia/layer1.png" id="3_6p7nn"]
+[ext_resource type="PackedScene" uid="uid://c6kuvrcrxl2sr" path="res://scenes/ground.tscn" id="3_u3e8w"]
+[ext_resource type="Texture2D" uid="uid://crdrtsdoo61s1" path="res://assets/sprites/backgrounds/dia/ground.png" id="4_crmut"]
+[ext_resource type="PackedScene" uid="uid://dfcsh5b7ftcru" path="res://scenes/player.tscn" id="5_a6h1i"]
+[ext_resource type="Script" path="res://scenes/player_intro.gd" id="6_rvnhf"]
+[ext_resource type="Texture2D" uid="uid://cbf05vetdhlmk" path="res://assets/sprites/backgrounds/black-gradient.png" id="7_umb8s"]
+[ext_resource type="PackedScene" uid="uid://dtasl0kw0cfjo" path="res://scenes/npc/megaterio.tscn" id="8_724ky"]
+[ext_resource type="AudioStream" uid="uid://bgvgwskuu2jw4" path="res://assets/audio/sfx/audio_intro.wav" id="9_q6wg0"]
+[ext_resource type="AudioStream" uid="uid://qcj4y26nc32a" path="res://assets/audio/music/Introduction (GM Version).wav" id="10_3gagx"]
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="10_ntt1o"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wibsk")
+
+[node name="Background" parent="." instance=ExtResource("2_if6go")]
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxLayer/Sprite2D" index="0"]
+modulate = Color(0, 0, 0.717647, 0.498039)
+z_index = -1
+position = Vector2(-21.815, 16.9672)
+texture = ExtResource("3_6p7nn")
+centered = false
+
+[node name="Ground" parent="." instance=ExtResource("3_u3e8w")]
+
+[node name="Sprite2D" parent="Ground" index="0"]
+position = Vector2(0, 439)
+scale = Vector2(0.461874, 0.461874)
+texture = ExtResource("4_crmut")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Megaterio" parent="Camera2D" instance=ExtResource("8_724ky")]
+position = Vector2(-723, 133)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+modulate = Color(1, 1, 1, 0.368627)
+self_modulate = Color(0.184314, 0.635294, 0.898039, 1)
+z_index = -2
+position = Vector2(-1, 174)
+rotation = -3.14159
+scale = Vector2(0.600097, 0.600097)
+texture = ExtResource("7_umb8s")
+
+[node name="Player" parent="." instance=ExtResource("5_a6h1i")]
+visible = false
+position = Vector2(150, 444)
+script = ExtResource("6_rvnhf")
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+z_index = 0
+autoplay = ""
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+position = Vector2(-0.5, -0.5)
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_q6wg0")
+volume_db = 11.818
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_3gagx")
+volume_db = 10.041
+
+[node name="PressSpace" type="RichTextLabel" parent="."]
+offset_left = 234.0
+offset_top = 487.0
+offset_right = 910.0
+offset_bottom = 554.0
+theme_override_colors/default_color = Color(0.921569, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_separation = 0
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("10_ntt1o")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center]Presiona SPACE para jugar[/center]"
+
+[editable path="Background"]
+[editable path="Ground"]
+[editable path="Player"]

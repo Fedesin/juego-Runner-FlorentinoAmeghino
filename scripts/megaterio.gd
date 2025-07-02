@@ -2,7 +2,6 @@ class_name Megaterio
 
 extends Node2D
 
-
 func _process(_delta: float) -> void:
     if not get_node("../..").game_running:
         $AnimatedSprite2D.play("idle")
@@ -14,4 +13,4 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-    $MeowSound.play()
+    $RoarSound.play()

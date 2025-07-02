@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cunjcc13ow3t2"
+path="res://.godot/imported/book_flip.8.ogg-c990923b1a8095f868dcc038a8d82b9b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/misc/Paper pack/book_flip.8.ogg"
+dest_files=["res://.godot/imported/book_flip.8.ogg-c990923b1a8095f868dcc038a8d82b9b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

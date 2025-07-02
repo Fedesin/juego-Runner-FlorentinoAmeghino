@@ -13,26 +13,42 @@ var bold_font = preload("res://assets/fonts/pixel-digivolve-font/PixelDigivolve-
 var title_shader = preload("res://scenes/shine.gdshader")
 
 func _ready():
+    $Camera2D/Music.play()
     $Overlay.visible = true
     await get_tree().create_timer(0.5).timeout
     transicion()
     await get_tree().create_timer(1.0).timeout
     
     var aux = 1
-
+    
+    var paper_path = getPaperSoundPath()
+    
+    
     for i in range(1, 6):
         var photo_a = get_node("Photos/PhotoA" + str(i))
         var photo_b = get_node("Photos/PhotoB" + str(i))
         add_shadow_clone(photo_a, my_shader)
         add_shadow_clone(photo_b, my_shader)
-        
+
+        # SONIDO para photo_a
+        $PaperSound.stop()
+        $PaperSound.stream = load(getPaperSoundPath())
+        $PaperSound.play()
         movePhoto(photo_a, true)
+
         await get_tree().create_timer(0.8 * aux).timeout
+
+        # SONIDO para photo_b
+        $PaperSound.stop()
+        $PaperSound.stream = load(getPaperSoundPath())
+        $PaperSound.play()
         movePhoto(photo_b, false)
+
         await get_tree().create_timer(2.5 * aux).timeout
     
     await get_tree().create_timer(0.5 * aux).timeout
     moveSign($CartelFlorentino)
+    $TitleSound.play()
     
     load_credits(CREDITS_TEXT_FILE_PATH)
     await get_tree().create_timer(3.0 * aux).timeout
@@ -44,6 +60,11 @@ func _ready():
     
     var tween = create_tween()
     tween.tween_property($Camera2D, "position:y", $Camera2D.position.y + altura, time)
+    
+func getPaperSoundPath():
+    var paper_path = "res://assets/audio/sfx/misc/Paper pack/book_flip."
+    var random_index = randi_range(1, 10)  # Por ejemplo, entre 1 y 5
+    return paper_path + str(random_index) + ".ogg"
     
 func movePhoto(photo, left):
     var tween = create_tween()

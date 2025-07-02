@@ -36,11 +36,25 @@ Codigo basado en el proyecto RUN FOR IT, Copyright (c) 2023 Joshua Najera
 <res://assets/sprites/photos/photo2.jpeg>
 
 
+<res://assets/sprites/photos/photo3.jpeg>
+
+
 ## DISENO GRAFICO / PIXEL ART
 - Kevin Monti
   Facilitador del CIDETIC
 
 
+## MUSICA
+- Zane Little Music: Insect Factory - (opengameart.org)
+- Zane Little Music: Hyper-Ultra-Fanfare - (opengameart.org)
+- Zane Little Music: The Way It Is - (opengameart.org)
+- Snabisch: Introduction (GM Version) - (opengameart.org)
+
+
+## SONIDO
+- Page Turning Sfx Sound Effect - Nicole Marie T (opengameart.org)
+- Sound effects Mini Pack1.5 - phoenix1291 (opengameart.org)
+- StarNinjas - 10 Book Page Flips (opengameart.org)
 
 
 ## AGRADECIMIENTOS

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://xmcamt5xtmet"]
 
-[ext_resource type="Texture2D" uid="uid://wi118gb1rfr3" path="res://assets/sprites/background/background.png" id="1_i5pv7"]
+[ext_resource type="Texture2D" uid="uid://bbwifxuf6xt3s" path="res://assets/sprites/background/background.png" id="1_i5pv7"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="4_facay"]
 [ext_resource type="AudioStream" uid="uid://dtdtxerciseny" path="res://assets/audio/sfx/ui/buttonrollover.wav" id="6_134ry"]
 [ext_resource type="AudioStream" uid="uid://ym5t3fjetgq8" path="res://assets/audio/sfx/ui/buttonclickrelease.wav" id="7_kf8uo"]

@@ -35,6 +35,8 @@ func start_fall(label: RichTextLabel, delay: float):
         tween.tween_property(label, "position:y", end_y, bounce_time).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
         tween.tween_property(label, "position:y", end_y + bounce_height, bounce_time).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
     tween.tween_property(label, "position:y", end_y, 0.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+    await get_tree().create_timer(0.6).timeout
+    $AudioHit.play()
 
 func intro_start(delta):
         await get_tree().create_timer(0.2).timeout
@@ -47,6 +49,7 @@ func _ready():
     $Skull1.modulate.a = 0.0
     $Skull2.modulate.a = 0.0
     $PressSpace.modulate.a = 0.0
+    $Music.play()
     skull1.play("default")  # Reemplaza "default" con el nombre de tu animación
     skull2.play("reverse")  # Reemplaza "default" con el nombre de tu animación
     start_fall(label1,0.5)

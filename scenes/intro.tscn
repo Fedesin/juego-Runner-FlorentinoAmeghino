@@ -1,18 +1,22 @@
-[gd_scene load_steps=26 format=3 uid="uid://jx6mifletg4i"]
+[gd_scene load_steps=30 format=3 uid="uid://jx6mifletg4i"]
 
 [ext_resource type="PackedScene" uid="uid://ce4x3xa1n7wsx" path="res://scenes/background.tscn" id="1_6hy13"]
 [ext_resource type="Script" path="res://scenes/intro.gd" id="1_337oa"]
 [ext_resource type="PackedScene" uid="uid://c6kuvrcrxl2sr" path="res://scenes/ground.tscn" id="2_ndxrh"]
 [ext_resource type="PackedScene" uid="uid://dfcsh5b7ftcru" path="res://scenes/player.tscn" id="3_a2dtq"]
+[ext_resource type="Texture2D" uid="uid://bs0ytkammbbq7" path="res://assets/sprites/backgrounds/dia/layer1.png" id="3_wr61f"]
 [ext_resource type="Script" path="res://scenes/player_intro.gd" id="4_7kt0j"]
 [ext_resource type="Texture2D" uid="uid://crdrtsdoo61s1" path="res://assets/sprites/backgrounds/dia/ground.png" id="4_c3r46"]
 [ext_resource type="FontFile" uid="uid://ct8lvmg7vylbs" path="res://assets/fonts/typeface-mario-world-pixel-font/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="4_l2gfi"]
 [ext_resource type="FontFile" uid="uid://kqw56ndy08bq" path="res://assets/fonts/pixel-cowboy-font/PixelCowboy-l7we.ttf" id="5_15kky"]
+[ext_resource type="Texture2D" uid="uid://cbf05vetdhlmk" path="res://assets/sprites/backgrounds/black-gradient.png" id="6_0ux3r"]
 [ext_resource type="Texture2D" uid="uid://b1n46fj2lidcj" path="res://assets/sprites/powerups/megaterio/craneo.png" id="7_px5id"]
 [ext_resource type="Shader" path="res://scenes/shine.gdshader" id="7_qt4ii"]
 [ext_resource type="Texture2D" uid="uid://dgpx06mgtfdng" path="res://assets/sprites/powerups/gliptodonte/craneo.png" id="9_0lgu8"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="10_i6eik"]
 [ext_resource type="Shader" path="res://scenes/circle.gdshader" id="12_g43ls"]
+[ext_resource type="AudioStream" uid="uid://becep6plbxlqy" path="res://assets/audio/music/sboe.wav" id="14_k0nv4"]
+[ext_resource type="AudioStream" uid="uid://cuvsbwj77ry85" path="res://assets/audio/sfx/sound_effects/Explosions/WAV/Explosion4.wav" id="15_pasx6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kt0kv"]
 shader = ExtResource("7_qt4ii")
@@ -114,6 +118,14 @@ script = ExtResource("1_337oa")
 
 [node name="Background" parent="." instance=ExtResource("1_6hy13")]
 
+[node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxLayer" index="2"]
+modulate = Color(0, 0.0666667, 0.45098, 0.454902)
+z_index = -1
+position = Vector2(-13, 8)
+scale = Vector2(0.412561, 0.412561)
+texture = ExtResource("3_wr61f")
+centered = false
+
 [node name="Ground" parent="." instance=ExtResource("2_ndxrh")]
 
 [node name="Sprite2D" parent="Ground" index="0"]
@@ -123,6 +135,15 @@ texture = ExtResource("4_c3r46")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+modulate = Color(1, 1, 1, 0.368627)
+self_modulate = Color(0.184314, 0.635294, 0.898039, 1)
+z_index = -2
+position = Vector2(-1, 174)
+rotation = -3.14159
+scale = Vector2(0.600097, 0.600097)
+texture = ExtResource("6_0ux3r")
 
 [node name="Player" parent="." instance=ExtResource("3_a2dtq")]
 position = Vector2(150, 444)
@@ -215,6 +236,17 @@ visible = false
 material = SubResource("ShaderMaterial_voabc")
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_k0nv4")
+volume_db = 5.431
+bus = &"Music"
+
+[node name="AudioHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_pasx6")
+volume_db = 14.926
+pitch_scale = 2.58
+bus = &"SFX"
 
 [editable path="Background"]
 [editable path="Ground"]
