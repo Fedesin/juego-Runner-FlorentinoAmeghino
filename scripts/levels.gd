@@ -15,7 +15,7 @@ var megaterio = crearAnimal("Megaterio", "res://assets/sprites/powerups/megateri
 
 # Crear la lista de niveles    dientesDeSable
 var levels = [
-    Level.new("Frías I", gliptodonte, 1, "dia", true),
+    Level.new("Frías I", dientesDeSable, 3, "dia", false),
     Level.new("Luján", aveDelTerror, 3, "tarde", false),
     Level.new("Paso del Cañón", toxodonte, 3, "noche", false),
     Level.new("Archaval", gliptodonte, 4,"dia", false),
