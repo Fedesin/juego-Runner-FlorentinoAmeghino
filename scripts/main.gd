@@ -335,8 +335,50 @@ func add_megaterio():
 
     megaterio_companion.global_position.x = $Player.position.x - randi_range(45, PLAYER_START_POS.x)
     megaterio_companion.global_position.y = PLAYER_START_POS.y
+    spawn_label_above(megaterio_companion, "MEGATERIO\nCOMPAÑERO!!")
+    
+func spawn_label_above(target_node: Node2D, text: String):
+    var label = RichTextLabel.new()
+    label.name = "MegaterioLabel"
+    var body_font = preload("res://assets/fonts/pixel-cowboy-font/PixelCowboy-l7we.ttf")
+    label.bbcode_enabled = true
+    label.fit_content = true
+    label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+    label.scroll_active = false
+    label.clip_contents = false
+    label.size.x = 300
+    label.rotation = 0.2
+
+    text = "[center]" + text + "[/center]"
+
+    label.text = text  # asignar después de modificar
+
+    label.add_theme_font_override("normal_font", body_font)
+    label.add_theme_font_size_override("normal_font_size", 30)
+    label.add_theme_color_override("default_color", Color(0.913, 0.867, 0.0))       
+    label.add_theme_constant_override("outline_size", 10)
+    label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 1))  # sombra negra
+
+    add_child(label)  # agregalo al mismo padre o a un contenedor adecuado
+
+    # Posicionarlo un poco más arriba (por ejemplo, 20 píxeles)
+    label.position = target_node.global_position + Vector2(-55, -230)
+    make_label_pulse(label)
+    
+func make_label_pulse(label: Control):
+    var tween = create_tween()
+    tween.set_loops()  # hace que se repita infinitamente
+    tween.set_trans(Tween.TRANS_SINE)
+    tween.set_ease(Tween.EASE_IN_OUT)
+
+    # Escalar a 1.2 en 0.5s y volver a 1.0 en 0.5s
+    tween.tween_property(label, "scale", Vector2(1.05, 1.05), 0.5)
+    tween.tween_property(label, "scale", Vector2(1.0, 1.0), 0.5)
 
 func remove_megaterio():
     if megaterio_companion and megaterio_companion.get_parent():
         megaterio_companion.queue_free()
         megaterio_companion = null
+        var label = get_node_or_null("MegaterioLabel")
+        if label:
+            label.queue_free()

@@ -21,15 +21,16 @@ script = ExtResource("1_wibsk")
 [node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxLayer/Sprite2D" index="0"]
 modulate = Color(0, 0, 0.717647, 0.498039)
 z_index = -1
-position = Vector2(-21.815, 16.9672)
+position = Vector2(-29.0866, 41.206)
 texture = ExtResource("3_6p7nn")
 centered = false
 
 [node name="Ground" parent="." instance=ExtResource("3_u3e8w")]
+position = Vector2(0, 10)
 
 [node name="Sprite2D" parent="Ground" index="0"]
-position = Vector2(0, 439)
-scale = Vector2(0.461874, 0.461874)
+position = Vector2(0, 429)
+scale = Vector2(0.5256, 0.477124)
 texture = ExtResource("4_crmut")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -72,6 +73,7 @@ volume_db = 11.818
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_3gagx")
 volume_db = 10.041
+bus = &"Music"
 
 [node name="PressSpace" type="RichTextLabel" parent="."]
 offset_left = 234.0

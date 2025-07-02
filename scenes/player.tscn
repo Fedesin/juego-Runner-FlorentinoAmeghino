@@ -135,4 +135,5 @@ bus = &"SFX"
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("6_u4dhk")
+volume_db = 17.642
 bus = &"SFX"

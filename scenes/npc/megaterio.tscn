@@ -113,7 +113,7 @@ one_shot = true
 [node name="RoarSound" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = SubResource("AudioStreamRandomizer_tvk47")
-volume_db = 16.183
+volume_db = 6.483
 max_distance = 1000.0
 bus = &"SFX"
 

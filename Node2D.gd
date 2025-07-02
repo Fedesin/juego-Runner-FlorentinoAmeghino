@@ -23,6 +23,8 @@ func _ready():
     await get_tree().create_timer(2).timeout
     skip = true
     showPressSpacet()
+    await get_tree().create_timer(23).timeout
+    tran_out()
     
     pass # Replace with function body.
 
@@ -73,7 +75,7 @@ func _process(delta):
         $Ground.position.x = $Ground.position.x - back_movement
         $Background/ParallaxLayer/Sprite2D.position.x = $Background/ParallaxLayer/Sprite2D.position.x - (back_movement / 2)
 
-    if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
+    if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.48:
         $Ground.position.x += screen_size.x
     if $Camera2D.position.x - $Background/ParallaxLayer/Sprite2D.position.x > screen_size.x * 1.5:
         $Background/ParallaxLayer/Sprite2D.position.x += screen_size.x

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Descubriendo Fósiles"
 config/version="1.1"
-run/main_scene="res://scenes/intro.tscn"
+run/main_scene="res://scenes/intro_animada.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.png"
 

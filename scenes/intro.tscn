@@ -121,7 +121,7 @@ script = ExtResource("1_337oa")
 [node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxLayer" index="2"]
 modulate = Color(0, 0.0666667, 0.45098, 0.454902)
 z_index = -1
-position = Vector2(-13, 8)
+position = Vector2(-11, 16)
 scale = Vector2(0.412561, 0.412561)
 texture = ExtResource("3_wr61f")
 centered = false

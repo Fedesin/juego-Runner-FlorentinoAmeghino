@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://khi2cn8efxd3" path="res://assets/sprites/animals/newAnimals/hippopotamus-2780699_1280.webp" id="8_emxwg"]
 [ext_resource type="Texture2D" uid="uid://cqvrimhkgboi4" path="res://assets/sprites/animals/oldAnimals/gliptodonte-animal.png" id="9_hlb72"]
 [ext_resource type="Texture2D" uid="uid://ber24n6h17f0v" path="res://assets/sprites/animals/newAnimals/armadillo-360123_1280.jpg" id="10_1nxh3"]
-[ext_resource type="Texture2D" uid="uid://bc5c8biwmqcui" path="res://assets/sprites/animals/oldAnimals/megaterio-animal2.jpg" id="11_3h881"]
+[ext_resource type="Texture2D" uid="uid://caltrfimmpo3q" path="res://assets/sprites/animals/oldAnimals/megaterio-animal.png" id="11_jtcek"]
 [ext_resource type="Texture2D" uid="uid://nfs1ma553cjh" path="res://assets/sprites/animals/newAnimals/sloth-9504650_1280.webp" id="12_s7opb"]
 [ext_resource type="Texture2D" uid="uid://bjvjt2lom2ihn" path="res://assets/sprites/backgrounds/credits_sign.png" id="13_o20pe"]
 [ext_resource type="Shader" path="res://scenes/shine.gdshader" id="14_sg6a0"]
@@ -113,9 +113,9 @@ texture = ExtResource("10_1nxh3")
 
 [node name="PhotoA5" type="Sprite2D" parent="Photos"]
 z_index = 10
-position = Vector2(-183, 1689)
-scale = Vector2(0.372632, 0.372632)
-texture = ExtResource("11_3h881")
+position = Vector2(-177, 1700)
+scale = Vector2(0.181908, 0.181908)
+texture = ExtResource("11_jtcek")
 
 [node name="PhotoB5" type="Sprite2D" parent="Photos"]
 z_index = 10
@@ -129,7 +129,8 @@ position = Vector2(576, 324)
 [node name="Music" type="AudioStreamPlayer2D" parent="Camera2D"]
 position = Vector2(-576, -324)
 stream = ExtResource("19_e4vtc")
-volume_db = 15.78
+volume_db = 13.629
+bus = &"Music"
 
 [node name="CartelFlorentino" type="Node2D" parent="."]
 z_index = 11
@@ -208,10 +209,12 @@ offset_bottom = 1803.0
 
 [node name="PaperSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_3am1g")
-volume_db = 11.343
+volume_db = 12.06
 pitch_scale = 1.44
+bus = &"SFX"
 
 [node name="TitleSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_es16j")
-volume_db = 22.235
+volume_db = 21.848
 pitch_scale = 1.3
+bus = &"SFX"

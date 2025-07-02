@@ -64,7 +64,7 @@ metadata/_edit_horizontal_guides_ = [-18456.0]
 [node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxLayer" index="2"]
 modulate = Color(0, 0.0666667, 0.45098, 0.454902)
 z_index = -1
-position = Vector2(-13, 8)
+position = Vector2(-13, 13)
 scale = Vector2(0.412561, 0.412561)
 texture = ExtResource("15_jd31g")
 centered = false
@@ -103,12 +103,13 @@ position = Vector2(576, 324)
 
 [node name="Cutscene_sound1" type="AudioStreamPlayer2D" parent="Camera2D"]
 stream = ExtResource("21_dxnt7")
-volume_db = 22.415
+volume_db = 24.0
 bus = &"SFX"
 
 [node name="Cutscene_sound2" type="AudioStreamPlayer2D" parent="Camera2D"]
 stream = ExtResource("23_cxihe")
-volume_db = 19.366
+volume_db = 22.235
+bus = &"SFX"
 
 [node name="RunningMusic" type="AudioStreamPlayer2D" parent="Camera2D"]
 stream = ExtResource("21_jm5g6")
