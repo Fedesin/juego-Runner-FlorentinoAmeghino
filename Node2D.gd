@@ -75,8 +75,14 @@ func _process(delta):
         $Ground.position.x = $Ground.position.x - back_movement
         $Background/ParallaxLayer/Sprite2D.position.x = $Background/ParallaxLayer/Sprite2D.position.x - (back_movement / 2)
 
-    if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.48:
-        $Ground.position.x += screen_size.x
+    var visible_size = $Camera2D.get_viewport_rect().size / $Camera2D.zoom
+    var camera_x = $Camera2D.global_position.x
+    var ground_x = $Ground.global_position.x
+    var camera_width = ($Camera2D.get_viewport_rect().size.x / $Camera2D.zoom.x)
+
+    # Si la cámara se alejó más de 1.5 veces el ancho de la cámara, reposicionar
+    if camera_x - ground_x > camera_width * 1.5:
+        $Ground.global_position.x += camera_width
     if $Camera2D.position.x - $Background/ParallaxLayer/Sprite2D.position.x > screen_size.x * 1.5:
         $Background/ParallaxLayer/Sprite2D.position.x += screen_size.x
 

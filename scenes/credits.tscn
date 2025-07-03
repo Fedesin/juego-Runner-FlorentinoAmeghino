@@ -129,7 +129,7 @@ position = Vector2(576, 324)
 [node name="Music" type="AudioStreamPlayer2D" parent="Camera2D"]
 position = Vector2(-576, -324)
 stream = ExtResource("19_e4vtc")
-volume_db = 13.629
+volume_db = 17.24
 bus = &"Music"
 
 [node name="CartelFlorentino" type="Node2D" parent="."]
@@ -209,7 +209,7 @@ offset_bottom = 1803.0
 
 [node name="PaperSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_3am1g")
-volume_db = 12.06
+volume_db = 19.282
 pitch_scale = 1.44
 bus = &"SFX"
 

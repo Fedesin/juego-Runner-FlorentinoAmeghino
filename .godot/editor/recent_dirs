@@ -1,6 +1,7 @@
+/home/acidetic/VJ-FA3
+res://assets/text
 res://scenes
 res://assets/audio/sfx/megaterio
-/home/kmonti/Desktop/Kevin/Game Design/juego-Runner-FlorentinoAmeghino/scripts
 res://scenes/npc
 res://scenes/objects
 res://assets/audio/sfx/sound_effects/Explosions/OGG
@@ -19,4 +20,3 @@ res://scripts
 res://assets/sprites/cats
 res://assets/sprites/backgrounds/dia
 res://scenes/cats
-res://assets/fonts/pixel-digivolve-font

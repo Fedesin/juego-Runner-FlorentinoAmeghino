@@ -58,7 +58,7 @@ Codigo basado en el proyecto RUN FOR IT, Copyright (c) 2023 Joshua Najera
 ## SONIDO
 - Page Turning Sfx Sound Effect - Nicole Marie T (opengameart.org)
 - Sound effects Mini Pack1.5 - phoenix1291 (opengameart.org)
-- StarNinjas - 10 Book Page Flips (opengameart.org)
+- 10 Book Page Flips - StarNinjas (opengameart.org)
 - Fantasy Desert Rideable Camel - CaveboyTup (opengameart.org)
 
 
@@ -112,4 +112,4 @@ Codigo basado en el proyecto RUN FOR IT, Copyright (c) 2023 Joshua Najera
 
 
 
-## LUJAN, 2024 – 2025
+## LUJAN, 2024 - 2025
