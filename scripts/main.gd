@@ -89,36 +89,36 @@ func _ready() -> void:
   new_game()
 
 func playCutscene():
-    var previousSpeed = speed
-    pausa = true
-    speed = 0
-    $Cutscene.visible = true
-    $Camera2D/Cutscene_sound1.play()
-    $Cutscene.playCutscene(getCurrentLevel().get_animal(), $Camera2D/Cutscene_sound2)
+  var previousSpeed = speed
+  pausa = true
+  speed = 0
+  $Cutscene.visible = true
+  $Camera2D/Cutscene_sound1.play()
+  $Cutscene.playCutscene(getCurrentLevel().get_animal(), $Camera2D/Cutscene_sound2)
     #speed = previousSpeed
 
 func getCurrentLevel() -> Level:
-    return levels.get_level()
+  return levels.get_level()
     
 func damage():
-    var shader_material = $Player/AnimatedSprite2D.material
-    var tween = get_tree().create_tween()
-    shader_material.set_shader_parameter("shock_progress", 1.0)
-    shader_material.set_shader_parameter("amplitude", 0.2)  # Antes estaba en 0.5, ahora lo reducimos
+  var shader_material = $Player/AnimatedSprite2D.material
+  var tween = get_tree().create_tween()
+  shader_material.set_shader_parameter("shock_progress", 1.0)
+  shader_material.set_shader_parameter("amplitude", 0.2)  # Antes estaba en 0.5, ahora lo reducimos
     # Interpola de 1.0 a 0.0 en 0.5 segundosj
-    tween.tween_property(shader_material, "shader_parameter/shock_progress", 0.0, 0.5)
-    tween.tween_property(shader_material, "shader_parameter/amplitude", 0.0, 0.5)  # Reduce amplitud
+  tween.tween_property(shader_material, "shader_parameter/shock_progress", 0.0, 0.5)
+  tween.tween_property(shader_material, "shader_parameter/amplitude", 0.0, 0.5)  # Reduce amplitud
     
 func screenDamage():
-    var tween = get_tree().create_tween()
-    $DamageFrame.modulate.a = 1
-    tween.tween_property($DamageFrame, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+  var tween = get_tree().create_tween()
+  $DamageFrame.modulate.a = 1
+  tween.tween_property($DamageFrame, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
     
 func passLevel():
-    levels.next()
-    pausa = false
-    await get_tree().create_timer(0.3).timeout
-    cutscene_playing = false
+  levels.next()
+  pausa = false
+  await get_tree().create_timer(0.3).timeout
+  cutscene_playing = false
 
 func _process(delta: float) -> void:
   $Player/Shadow.global_position.x = $Player.global_position.x
@@ -132,20 +132,19 @@ func _process(delta: float) -> void:
   # Start the game if received input to do so, otherwise halt the game loop
   if not game_running:
     if Input.is_action_pressed("jump") and (not cutscene_playing):
-      game_running = true
-      $HUD/StartLabel.hide()
-      var tween = get_tree().create_tween()
-      tween.tween_property($HUD/TitleLabel, "modulate:a", 0, 2.5)
-      start_game.emit()
+        game_running = true
+        $HUD/StartLabel.hide()
+        var tween = get_tree().create_tween()
+        tween.tween_property($HUD/TitleLabel, "modulate:a", 0, 2.5)
+        start_game.emit()
     else:
-      return
+        return
 
   if not pausa:
     speed = (
         clamp(START_SPEED + score / SPEED_MODIFIER, START_SPEED, MAX_SPEED) * PROSTO_SPEED * delta
     )
     adjust_difficulty()
-
     generate_item()
 
   # Move the player forward
@@ -163,7 +162,7 @@ func _process(delta: float) -> void:
   # Remove the items_spawned that have gone off screen
   for obstacle in items_spawned:
     if obstacle.position.x < ($Camera2D.position.x - screen_size.x):
-      remove_item(obstacle)
+        remove_item(obstacle)
 
 
 func new_game() -> void:
@@ -233,15 +232,14 @@ func check_high_score() -> void:
 func generate_item() -> void:
   if not items_spawned.is_empty():
     if last_item_spawned != null:
-      if last_item_spawned.position.x >= score + randi_range(300, 500):
-        return
+        if last_item_spawned.position.x >= score + randi_range(300, 500):
+            return
   var item_type := item_variants[randi() % item_variants.size()]
   var item: Item
 
   var max_items := difficulty + 1
   for i in randi() % max_items + 1:
     item = item_type.instantiate()
-    
     if item is Coin:
         item.set_animal(levels.get_level().get_animal())
 
@@ -256,7 +254,7 @@ func generate_item() -> void:
       - (item_height * item_scale.y / 2)
       + (2 * item_scale.y)
     )
-
+    
     add_item(item, item_x, item_y + -200)
 
 
@@ -306,17 +304,17 @@ func end_game() -> void:
 func generate_cat() -> void:
   if green_cats_spawned.size() < green_cats_owned:
     for i in green_cats_owned - green_cats_spawned.size():
-      green_cats_spawned.append(add_cat(green_cat))
+        green_cats_spawned.append(add_cat(green_cat))
   if pink_cats_spawned.size() < pink_cats_owned:
     for i in pink_cats_owned - pink_cats_spawned.size():
-      pink_cats_spawned.append(add_cat(pink_cat))
+        pink_cats_spawned.append(add_cat(pink_cat))
   if blue_cats_spawned.size() < blue_cats_owned:
     for i in blue_cats_owned - blue_cats_spawned.size():
-      blue_cats_spawned.append(add_cat(blue_cat))
+        blue_cats_spawned.append(add_cat(blue_cat))
   if cats_spawned.size() < cats_owned:
     for i in cats_owned - cats_spawned.size():
-      var cat_type = cat_variants[randi() % cat_variants.size()]
-      cats_spawned.append(add_cat(cat_type))
+        var cat_type = cat_variants[randi() % cat_variants.size()]
+        cats_spawned.append(add_cat(cat_type))
 
 
 func add_cat(cat_type: PackedScene) -> Cat:
@@ -332,7 +330,6 @@ func add_megaterio():
   if not megaterio_companion:
     megaterio_companion = megaterio.instantiate()
     $Camera2D.add_child(megaterio_companion)
-
     megaterio_companion.global_position.x = $Player.position.x - randi_range(45, PLAYER_START_POS.x)
     megaterio_companion.global_position.y = PLAYER_START_POS.y
     spawn_label_above(megaterio_companion, "MEGATERIO\nCOMPAÑERO!!")
@@ -348,17 +345,17 @@ func spawn_label_above(target_node: Node2D, text: String):
     label.clip_contents = false
     label.size.x = 300
     label.rotation = 0.2
-
+    
     text = "[center]" + text + "[/center]"
-
+    
     label.text = text  # asignar después de modificar
-
+    
     label.add_theme_font_override("normal_font", body_font)
     label.add_theme_font_size_override("normal_font_size", 30)
     label.add_theme_color_override("default_color", Color(0.913, 0.867, 0.0))       
     label.add_theme_constant_override("outline_size", 10)
     label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 1))  # sombra negra
-
+    
     add_child(label)  # agregalo al mismo padre o a un contenedor adecuado
 
     # Posicionarlo un poco más arriba (por ejemplo, 20 píxeles)
