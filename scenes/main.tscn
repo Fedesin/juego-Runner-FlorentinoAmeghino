@@ -125,6 +125,11 @@ rotation = -3.14159
 scale = Vector2(0.600097, 0.600097)
 texture = ExtResource("24_rapbn")
 
+[node name="DamageFrame" type="Sprite2D" parent="Camera2D"]
+visible = false
+scale = Vector2(6, 6)
+texture = ExtResource("31_k5167")
+
 [node name="HUD" parent="." instance=ExtResource("5_mo7pu")]
 
 [node name="ScoreLabel" parent="HUD" index="0"]
@@ -270,11 +275,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
-[node name="DamageFrame" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(576, 324)
-scale = Vector2(6, 6)
-texture = ExtResource("31_k5167")
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [connection signal="game_end" from="." to="GameOver" method="_on_game_end"]
 [connection signal="reset_game" from="." to="HUD" method="reset"]

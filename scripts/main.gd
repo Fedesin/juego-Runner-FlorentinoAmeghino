@@ -76,7 +76,7 @@ var megaterio_companion: Megaterio
 
 func _ready() -> void:
   #$Camera2D/RunningMusic.volume_db = 6
-  $DamageFrame.visible = true
+  $Camera2D/DamageFrame.visible = true
 
   $Camera2D/RunningMusic.play()
 
@@ -85,7 +85,7 @@ func _ready() -> void:
   ground_height = $Ground/Sprite2D.texture.get_height()
   ground_scale = $Ground/Sprite2D.scale.y
   $GameOver/Button.pressed.connect(new_game)
-  $DamageFrame.modulate.a = 0
+  $Camera2D/DamageFrame.modulate.a = 0
   new_game()
 
 func playCutscene():
@@ -111,8 +111,8 @@ func damage():
     
 func screenDamage():
   var tween = get_tree().create_tween()
-  $DamageFrame.modulate.a = 1
-  tween.tween_property($DamageFrame, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+  $Camera2D/DamageFrame.modulate.a = 1
+  tween.tween_property($Camera2D/DamageFrame, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
     
 func passLevel():
   levels.next()
@@ -155,9 +155,14 @@ func _process(delta: float) -> void:
   score += speed
   show_score()
 
-  # Reset ground position to keep it in bounds
-  if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
-    $Ground.position.x += screen_size.x
+  var visible_size = $Camera2D.get_viewport_rect().size / $Camera2D.zoom
+  var camera_x = $Camera2D.global_position.x
+  var ground_x = $Ground.global_position.x
+  var camera_width = ($Camera2D.get_viewport_rect().size.x / $Camera2D.zoom.x)
+
+  # Si la cámara se alejó más de 1.5 veces el ancho de la cámara, reposicionar
+  if camera_x - ground_x > camera_width * 1.5:
+    $Ground.global_position.x += camera_width
 
   # Remove the items_spawned that have gone off screen
   for obstacle in items_spawned:
