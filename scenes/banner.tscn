@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqsu0x634obv3"]
+
+[ext_resource type="Texture2D" uid="uid://dvqrshe5sglrc" path="res://icon2.png" id="2_gb7a8"]
+[ext_resource type="Shader" path="res://scenes/shine.gdshader" id="3_o5s41"]
+[ext_resource type="FontFile" uid="uid://ct8lvmg7vylbs" path="res://assets/fonts/typeface-mario-world-pixel-font/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" id="4_82me5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kt0kv"]
+shader = ExtResource("3_o5s41")
+shader_parameter/size_effect = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+shader_parameter/pause_duration = 0.5
+shader_parameter/texture_size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ngexc"]
+shader = ExtResource("3_o5s41")
+shader_parameter/size_effect = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+shader_parameter/pause_duration = 0.5
+shader_parameter/texture_size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(662, 181)
+scale = Vector2(1.40869, 1.40869)
+texture = ExtResource("2_gb7a8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(496.114, 180.688)
+scale = Vector2(1.40869, 1.40869)
+texture = ExtResource("2_gb7a8")
+
+[node name="Title2" type="RichTextLabel" parent="."]
+material = SubResource("ShaderMaterial_kt0kv")
+offset_left = 403.0
+offset_top = 174.619
+offset_right = 1257.0
+offset_bottom = 315.619
+rotation = -0.0882452
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/normal_font = ExtResource("4_82me5")
+theme_override_font_sizes/normal_font_size = 78
+bbcode_enabled = true
+text = "[center]Ameghino[/center]"
+
+[node name="Title1" type="RichTextLabel" parent="."]
+material = SubResource("ShaderMaterial_ngexc")
+offset_left = 216.0
+offset_top = 79.6193
+offset_right = 1260.0
+offset_bottom = 214.619
+rotation = -0.0705751
+theme_override_colors/default_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/normal_font = ExtResource("4_82me5")
+theme_override_font_sizes/normal_font_size = 78
+bbcode_enabled = true
+text = "[center]Florentino [/center]"
