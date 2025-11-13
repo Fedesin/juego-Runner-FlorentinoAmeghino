@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://l5e8by83d32f"]
+[gd_scene load_steps=14 format=3 uid="uid://l5e8by83d32f"]
 
 [ext_resource type="Script" path="res://scenes/instructions.gd" id="1_4t14e"]
 [ext_resource type="Texture2D" uid="uid://buuxvj35rwbiy" path="res://Background.png" id="1_gatdi"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="2_vdje3"]
 [ext_resource type="Texture2D" uid="uid://clou5jus6gk17" path="res://assets/sprites/cats/florentino-jump.png" id="3_sqm21"]
 [ext_resource type="Texture2D" uid="uid://bdumdopxx54a0" path="res://assets/sprites/cats/florentino-run.png" id="4_2ggdd"]
-[ext_resource type="Texture2D" uid="uid://b148m6h4kuryt" path="res://assets/sprites/powerups/ave-del-terror/hueso.png" id="5_gyf41"]
+[ext_resource type="Texture2D" uid="uid://be3eg8h6uom0n" path="res://assets/sprites/keyboard_space.png" id="6_2oriq"]
+[ext_resource type="Texture2D" uid="uid://mhju2ars6he5" path="res://assets/sprites/keyboard_esc.png" id="7_6dmpt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ptxlv"]
 atlas = ExtResource("4_2ggdd")
@@ -58,52 +59,16 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3mwty"]
-atlas = ExtResource("5_gyf41")
-region = Rect2(0, 0, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6uyde"]
-atlas = ExtResource("5_gyf41")
-region = Rect2(18, 0, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1epl"]
-atlas = ExtResource("5_gyf41")
-region = Rect2(36, 0, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5xlw"]
-atlas = ExtResource("5_gyf41")
-region = Rect2(54, 0, 18, 18)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pjv4k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3mwty")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6uyde")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1epl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u5xlw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4t14e")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Fondo" type="Sprite2D" parent="."]
 modulate = Color(0.298039, 0.313726, 0.435294, 1)
 position = Vector2(575.891, 324)
 scale = Vector2(0.767773, 0.767772)
 texture = ExtResource("1_gatdi")
 
-[node name="Label" type="Label" parent="."]
+[node name="Titulo" type="Label" parent="."]
 offset_top = 39.0
 offset_right = 1150.0
 offset_bottom = 92.0
@@ -117,86 +82,133 @@ text = "INSTRUCCIONES"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="."]
+[node name="Descripcion" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = -7.43396
+anchor_bottom = -7.01887
+offset_left = 49.0
+offset_top = 118.0
+offset_right = 1097.0
+offset_bottom = 333.0
+size_flags_stretch_ratio = 1.23
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/line_spacing = 25
+theme_override_fonts/font = ExtResource("2_vdje3")
+theme_override_font_sizes/font_size = 27
+text = "EL juego se juega solo con la tecla ESPACIO (            ), 
+y puedes ver el menu de pausa con la tecla ESCAPE (            ).
+Debes recolectar la cantidad OBJETIVO de huesos para
+pasar de nivel."
+
+[node name="ESPACIO" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = -7.43396
+anchor_bottom = -7.01887
+offset_left = 669.0
+offset_top = 118.0
+offset_right = 845.0
+offset_bottom = 167.0
+size_flags_stretch_ratio = 1.23
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0.286275, 0.160784, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/line_spacing = 25
+theme_override_fonts/font = ExtResource("2_vdje3")
+theme_override_font_sizes/font_size = 27
+text = "ESPACIO"
+
+[node name="ESCAPE" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = -7.43396
+anchor_bottom = -7.01887
+offset_left = 804.0
+offset_top = 178.0
+offset_right = 980.0
+offset_bottom = 227.0
+size_flags_stretch_ratio = 1.23
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0.286275, 0.160784, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/line_spacing = 25
+theme_override_fonts/font = ExtResource("2_vdje3")
+theme_override_font_sizes/font_size = 27
+text = "ESCAPE"
+
+[node name="Key1" type="Sprite2D" parent="."]
+position = Vector2(898, 123)
+scale = Vector2(3.29331, 3.29331)
+texture = ExtResource("6_2oriq")
+
+[node name="Key2" type="Sprite2D" parent="."]
+position = Vector2(1016, 191)
+scale = Vector2(3.29331, 3.29331)
+texture = ExtResource("7_6dmpt")
+
+[node name="Item1" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.127826
 anchor_top = 2.16981
 anchor_right = 0.127826
 anchor_bottom = 2.16981
-offset_top = 300.0
+offset_top = 373.25
 offset_right = 1150.0
-offset_bottom = 353.0
+offset_bottom = 426.25
 size_flags_stretch_ratio = 1.23
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_vdje3")
 theme_override_font_sizes/font_size = 25
-text = "                   Florentino corre solo, sin que presiones nada"
+text = "               *  Florentino corre solo, sin que presiones nada"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Item2" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = -0.216522
 anchor_top = 1.5283
 anchor_right = -0.216522
 anchor_bottom = 1.5283
-offset_top = 374.0
+offset_top = 429.0
 offset_right = 1150.0
-offset_bottom = 427.0
+offset_bottom = 482.0
 size_flags_stretch_ratio = 1.23
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_vdje3")
 theme_override_font_sizes/font_size = 25
-text = "Presiona la tecla ESPACIO para saltar                         "
-horizontal_alignment = 2
+text = "               *  Presiona la tecla ESPACIO para saltar"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(949, 318)
-scale = Vector2(5.02778, 5.02778)
-sprite_frames = SubResource("SpriteFrames_clxcp")
-animation = &"running"
-autoplay = "running"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(274, 391)
-scale = Vector2(4.84722, 4.84722)
-sprite_frames = SubResource("SpriteFrames_clxcp")
-animation = &"jump"
-autoplay = "jump"
-
-[node name="Label4" type="Label" parent="."]
+[node name="Item3" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.127826
 anchor_top = 2.16981
 anchor_right = 0.127826
 anchor_bottom = 2.16981
-offset_top = 453.0
+offset_top = 481.0
 offset_right = 1150.0
-offset_bottom = 506.0
+offset_bottom = 534.0
 size_flags_stretch_ratio = 1.23
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_vdje3")
 theme_override_font_sizes/font_size = 25
-text = "                         Toca los huesos para recolectaros"
+text = "               *  Toca los huesos para recolectaros"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(843, 472)
-scale = Vector2(4.22222, 4.22222)
-sprite_frames = SubResource("SpriteFrames_pjv4k")
-autoplay = "default"
+[node name="FA1" type="AnimatedSprite2D" parent="."]
+position = Vector2(949, 391.25)
+scale = Vector2(5.02778, 5.02778)
+sprite_frames = SubResource("SpriteFrames_clxcp")
+animation = &"running"
+autoplay = "running"
 
 [node name="PressSpace" type="RichTextLabel" parent="."]
 offset_left = 234.0
-offset_top = 548.0
+offset_top = 558.0
 offset_right = 910.0
-offset_bottom = 615.0
+offset_bottom = 625.0
 theme_override_colors/default_color = Color(0.921569, 0.756863, 0.180392, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -210,27 +222,11 @@ theme_override_font_sizes/normal_font_size = 27
 bbcode_enabled = true
 text = "[center]Presiona ESPACIO para jugar[/center]"
 
-[node name="Label5" type="Label" parent="."]
-anchors_preset = -1
-anchor_top = -7.43396
-anchor_bottom = -7.01887
-offset_top = 112.0
-offset_right = 1150.0
-offset_bottom = 249.0
-size_flags_stretch_ratio = 1.23
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_vdje3")
-theme_override_font_sizes/font_size = 25
-text = "EL juego se juega solo con la tecla ESPACIO, y puedes
-ver el menu de pausa con la tecla ESCAPE.
-Debes recolectar la cantidad OBJETIVO de huesos para
-pasar de nivel."
-horizontal_alignment = 1
-
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
