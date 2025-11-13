@@ -91,7 +91,7 @@ theme_override_constants/outline_size = 7
 theme_override_fonts/normal_font = ExtResource("10_ntt1o")
 theme_override_font_sizes/normal_font_size = 23
 bbcode_enabled = true
-text = "[center]Presiona SPACE para jugar[/center]"
+text = "[center]Presiona ESPACIO para jugar[/center]"
 
 [editable path="Background"]
 [editable path="Ground"]

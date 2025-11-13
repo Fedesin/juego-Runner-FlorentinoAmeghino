@@ -44,7 +44,7 @@ var earned: int
 # Player moving speed
 var speed: float
 const START_SPEED := 7.0
-const MAX_SPEED := 25.0
+const MAX_SPEED := 13.0
 const PROSTO_SPEED := 100
 const SPEED_MODIFIER := 10000
 
@@ -201,6 +201,8 @@ func new_game() -> void:
   var tween = get_tree().create_tween()
   tween.tween_property($HUD/TitleLabel, "modulate:a", 1, 0)
   var level_title = levels.get_level().get_title()
+
+  $HUD/ObjectiveLabel.text = "Objetivo: " + str(levels.get_level().getMaxScore())
   
   if level_title == "<FIN>" :
     get_tree().change_scene_to_packed(credits_scene)

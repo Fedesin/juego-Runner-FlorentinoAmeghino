@@ -100,6 +100,7 @@ texture = ExtResource("19_8hq3d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+position_smoothing_speed = 15.0
 
 [node name="Cutscene_sound1" type="AudioStreamPlayer2D" parent="Camera2D"]
 stream = ExtResource("21_dxnt7")
@@ -155,7 +156,7 @@ theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("19_ete86")
-text = "Presiona SPACE para correr!"
+text = "Presiona ESPACIO para saltar!"
 
 [node name="TimeLabel" parent="HUD" index="3"]
 visible = false
@@ -174,6 +175,21 @@ theme_override_fonts/font = ExtResource("18_0uq70")
 theme_override_font_sizes/font_size = 55
 text = "TITULO"
 horizontal_alignment = 1
+
+[node name="ObjectiveLabel" type="Label" parent="HUD"]
+offset_left = 23.0
+offset_top = 59.0
+offset_right = 285.83
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.913725, 0.866667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("19_ete86")
+theme_override_font_sizes/font_size = 40
+text = "Objetivo: 0"
 
 [node name="GameOver" parent="." node_paths=PackedStringArray("main") instance=ExtResource("10_4c20w")]
 visible = false
@@ -252,7 +268,7 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("21_ugs5p")
 theme_override_font_sizes/font_size = 24
-text = "Presiona SPACE para continuar"
+text = "Presiona ESPACIO para continuar"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

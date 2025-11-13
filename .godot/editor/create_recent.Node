@@ -1,10 +1,10 @@
+AnimatedSprite2D
 Sprite2D
 ParallaxLayer
 AudioStreamPlayer2D
 Timer
 AudioStreamPlayer
 Node2D
-AnimatedSprite2D
 VBoxContainer
 Area2D
 ParallaxBackground
