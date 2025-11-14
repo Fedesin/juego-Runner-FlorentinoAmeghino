@@ -1,30 +1,30 @@
-[gd_scene load_steps=14 format=3 uid="uid://l5e8by83d32f"]
+[gd_scene load_steps=19 format=3 uid="uid://l5e8by83d32f"]
 
 [ext_resource type="Script" path="res://scenes/instructions.gd" id="1_4t14e"]
 [ext_resource type="Texture2D" uid="uid://buuxvj35rwbiy" path="res://Background.png" id="1_gatdi"]
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="2_vdje3"]
-[ext_resource type="Texture2D" uid="uid://clou5jus6gk17" path="res://assets/sprites/cats/florentino-jump.png" id="3_sqm21"]
 [ext_resource type="Texture2D" uid="uid://bdumdopxx54a0" path="res://assets/sprites/cats/florentino-run.png" id="4_2ggdd"]
 [ext_resource type="Texture2D" uid="uid://be3eg8h6uom0n" path="res://assets/sprites/keyboard_space.png" id="6_2oriq"]
 [ext_resource type="Texture2D" uid="uid://mhju2ars6he5" path="res://assets/sprites/keyboard_esc.png" id="7_6dmpt"]
+[ext_resource type="Texture2D" uid="uid://stoolt446aey" path="res://assets/sprites/powerups/toxodonte/torso.png" id="7_fc3x5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ptxlv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg7cu"]
 atlas = ExtResource("4_2ggdd")
 region = Rect2(0, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fn2qr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vefm"]
 atlas = ExtResource("4_2ggdd")
 region = Rect2(18, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_61ovx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tjwi"]
 atlas = ExtResource("4_2ggdd")
 region = Rect2(36, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5iet0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dksia"]
 atlas = ExtResource("4_2ggdd")
 region = Rect2(54, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5xer"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvu0f"]
 atlas = ExtResource("4_2ggdd")
 region = Rect2(72, 0, 18, 18)
 
@@ -32,31 +32,59 @@ region = Rect2(72, 0, 18, 18)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_sqm21")
+"texture": SubResource("AtlasTexture_qg7cu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vefm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tjwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dksia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvu0f")
 }],
 "loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjc6k"]
+atlas = ExtResource("7_fc3x5")
+region = Rect2(36, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4abxx"]
+atlas = ExtResource("7_fc3x5")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od4qn"]
+atlas = ExtResource("7_fc3x5")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdite"]
+atlas = ExtResource("7_fc3x5")
+region = Rect2(54, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vci7"]
+animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ptxlv")
+"texture": SubResource("AtlasTexture_sjc6k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fn2qr")
+"texture": SubResource("AtlasTexture_4abxx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_61ovx")
+"texture": SubResource("AtlasTexture_od4qn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5iet0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5xer")
+"texture": SubResource("AtlasTexture_kdite")
 }],
 "loop": true,
-"name": &"running",
-"speed": 12.0
+"name": &"default",
+"speed": 6.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -152,9 +180,9 @@ anchor_left = 0.127826
 anchor_top = 2.16981
 anchor_right = 0.127826
 anchor_bottom = 2.16981
-offset_top = 373.25
+offset_top = 359.25
 offset_right = 1150.0
-offset_bottom = 426.25
+offset_bottom = 412.25
 size_flags_stretch_ratio = 1.23
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -169,9 +197,9 @@ anchor_left = -0.216522
 anchor_top = 1.5283
 anchor_right = -0.216522
 anchor_bottom = 1.5283
-offset_top = 429.0
+offset_top = 421.0
 offset_right = 1150.0
-offset_bottom = 482.0
+offset_bottom = 474.0
 size_flags_stretch_ratio = 1.23
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -186,9 +214,9 @@ anchor_left = 0.127826
 anchor_top = 2.16981
 anchor_right = 0.127826
 anchor_bottom = 2.16981
-offset_top = 481.0
+offset_top = 489.0
 offset_right = 1150.0
-offset_bottom = 534.0
+offset_bottom = 542.0
 size_flags_stretch_ratio = 1.23
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -198,11 +226,16 @@ theme_override_font_sizes/font_size = 25
 text = "               *  Toca los huesos para recolectaros"
 
 [node name="FA1" type="AnimatedSprite2D" parent="."]
-position = Vector2(949, 391.25)
-scale = Vector2(5.02778, 5.02778)
+position = Vector2(941.875, 375.125)
+scale = Vector2(4.45833, 4.45833)
 sprite_frames = SubResource("SpriteFrames_clxcp")
-animation = &"running"
-autoplay = "running"
+autoplay = "default"
+
+[node name="H1" type="AnimatedSprite2D" parent="."]
+position = Vector2(782.75, 504.75)
+scale = Vector2(3.02779, 3.02779)
+sprite_frames = SubResource("SpriteFrames_5vci7")
+autoplay = "default"
 
 [node name="PressSpace" type="RichTextLabel" parent="."]
 offset_left = 234.0

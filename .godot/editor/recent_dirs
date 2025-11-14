@@ -1,7 +1,8 @@
-res://assets/sprites
-res://assets/sprites/powerups/ave-del-terror
 res://scenes
 res://assets/sprites/cats
+res://assets/sprites/powerups/toxodonte
+res://assets/sprites
+res://assets/sprites/powerups/ave-del-terror
 /home/kmonti/Desktop/Kevin/Game Design/juego-Runner-FlorentinoAmeghino/scripts
 res://
 res://assets/text
@@ -19,4 +20,3 @@ res://assets/audio/sfx/sound_effects/Hit/WAV
 res://assets/sprites/npc
 res://assets/sprites/backgrounds
 res://assets/sprites/animals/newAnimals
-res://assets/sprites/animals/oldAnimals

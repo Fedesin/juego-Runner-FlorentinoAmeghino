@@ -1,7 +1,7 @@
-res://scenes/intro_animada.tscn
+res://scenes/instructions.tscn
 res://scripts/player.gd
 res://scenes/objects/miShader.gdshader
 res://scenes/circle.gdshader
+res://scenes/intro_animada.tscn
 res://scenes/main.tscn
-res://scenes/instructions.tscn
-res://scenes/instructions.gd
+res://scenes/credits.tscn
